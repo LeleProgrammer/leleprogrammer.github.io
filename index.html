@@ -43,7 +43,11 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
   
@@ -140,9 +144,28 @@
       
 
 
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/%E6%B5%8B%E8%AF%95/">
+                测试
+                <div class="category-count">1</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
 
     
       
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
+    </div>
+  </div>
+
 
     
   </div>
@@ -153,7 +176,7 @@
    
 
 
-<article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-测试" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
   <div class="article-inner">
     <div class="article-main">
@@ -164,7 +187,7 @@
   
     
       <h1 itemprop="name">
-        <a class="p-name article-title" href="/2025/08/16/hello-world/">Hello World</a>
+        <a class="p-name article-title" href="/2025/08/16/%E6%B5%8B%E8%AF%95/">测试</a>
       </h1>
     
   
@@ -172,40 +195,59 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2025-08-16T05:39:20.419Z" itemprop="datePublished">2025-08-16</time>
+  <time class="dt-published" datetime="2025-08-16T08:13:26.000Z" itemprop="datePublished">2025-08-16</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-    未分类 
+  <a class="meta-cate-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            367 词 
+            384 词 
           </div>
         </div>
         
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
+
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="truncate-text">
             
-              Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
+              测试
+一级标题
+二级标题
+三级标题
+四级标题
+五级标题
+六级标题
+正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文。
+正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文。
 
-More info: Writing
-Run server1$ hexo server
+引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用
+引用引用引用引用引用引用引用引用引用引用
 
-More info: Server
-Generate static files1$ hexo generate
 
-More info: Generating
-Deploy to remote sites1$ hexo deploy
+first.
+second.
+third.
 
-More info: Deployment
 
+todo 1
+todo 2
+todo 3
+
+这是公式：
+$$
+\sum\limits_{i=0}^n a_i^2
+$$
+这是公式：$\frac{1}{2}=0.5$
+11 2 3 4 5
+1#include &lt;bits/stdc++.h&gt;
+12import pygamepygame.init()
             
           </div>
         
@@ -217,7 +259,7 @@ More info: Deployment
      
     <a class="right-panel  non-pic  "
       
-      href="/2025/08/16/hello-world/" 
+      href="/2025/08/16/%E6%B5%8B%E8%AF%95/" 
     >
        
       <i class="fa-solid fa-angle-right non-pic"></i>
@@ -272,5 +314,20 @@ More info: Deployment
 
   </div>
   <script src="/js/light-dark-switch.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
