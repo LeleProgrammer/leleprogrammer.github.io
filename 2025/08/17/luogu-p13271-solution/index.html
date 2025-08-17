@@ -14,23 +14,24 @@
   
 
   
-  <title>关于 | LeleBlog</title>
+  <title>��� P13271 [NOI2025] ������ ��� | LeleBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="About Me 喵喵喵懒得写了以后有空再写。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="https://leleprogrammer.github.io/about/index.html">
+  <meta name="description" content="��� P13271 [NOI2025] ������ ��� һ���Ƚϲ����ķֲ�ͼ��Ŀ����¼һ�¡� ˼· ����һ���� $i$���������ĳ���Ϊ $outdeg_i$����ô���� $outdeg_i + 1$ ���㣬����һ���ߣ������������ $i$ �ĵ� $j$ ���ߣ���ô $i$ �ĵ� $j$ ���������յ� $des">
+<meta property="og:type" content="article">
+<meta property="og:title" content="��� P13271 [NOI2025] ������ ���">
+<meta property="og:url" content="https://leleprogrammer.github.io/2025/08/17/luogu-p13271-solution/index.html">
 <meta property="og:site_name" content="LeleBlog">
-<meta property="og:description" content="About Me 喵喵喵懒得写了以后有空再写。">
+<meta property="og:description" content="��� P13271 [NOI2025] ������ ��� һ���Ƚϲ����ķֲ�ͼ��Ŀ����¼һ�¡� ˼· ����һ���� $i$���������ĳ���Ϊ $outdeg_i$����ô���� $outdeg_i + 1$ ���㣬����һ���ߣ������������ $i$ �ĵ� $j$ ���ߣ���ô $i$ �ĵ� $j$ ���������յ� $des">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-08-16T05:48:01.000Z">
-<meta property="article:modified_time" content="2025-08-16T08:27:46.565Z">
+<meta property="article:published_time" content="2025-08-17T15:39:35.000Z">
+<meta property="article:modified_time" content="2025-08-17T15:46:30.399Z">
 <meta property="article:author" content="Lele">
+<meta property="article:tag" content="NOI">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="LeleBlog" type="application/atom+xml">
@@ -244,7 +245,9 @@
        
 
 
-<article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-luogu-p13271-solution" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
    
   <div class="article-inner">
     <div class="article-main">
@@ -255,7 +258,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        关于
+        ��� P13271 [NOI2025] ������ ���
       </h1>
     
   
@@ -263,27 +266,33 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2025-08-16T05:48:01.000Z" itemprop="datePublished">2025-08-16</time>
+  <time class="dt-published" datetime="2025-08-17T15:39:35.000Z" itemprop="datePublished">2025-08-17</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-    未分类 
+  <a class="meta-cate-link" href="/categories/%EF%BF%BD%EF%BF%BD%EF%BF%BD/">���</a>
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            21 词 
+            2.2k 词 
           </div>
         </div>
         
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NOI/" rel="tag">NOI</a></li></ul>
+
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1>About Me</h1>
-<p>喵喵喵懒得写了以后有空再写。</p>
-
+          <h1>��� P13271 [NOI2025] ������ ���</h1>
+<p>һ���Ƚϲ����ķֲ�ͼ��Ŀ����¼һ�¡�</p>
+<h2 id="˼·">˼·</h2>
+<p>����һ���� $i$���������ĳ���Ϊ $outdeg_i$����ô���� $outdeg_i + 1$ ���㣬����һ���ߣ������������ $i$ �ĵ� $j$ ���ߣ���ô $i$ �ĵ� $j$ ���������յ� $dest$ �ĵ� $j$ ���㣬�������㲻���ڣ���ô�����ӵ� $j$ �ĵ� $outdeg_{dest}$ ����ͬʱ���� $p$ �½����ⲿ��ֵ����ǰ׺����� $w$ ��һ�εĺͣ�ͬʱ $i$ �ĵ� $j$ ������ $dest$ �ĵ� $outdeg_{dest}+1$ �������ߡ�����һ�����ǰ $outdeg_{dest}$ ���㣬�������㰴�� $v,w$ ���ߡ�</p>
+<p>��ı�ſ��԰������·�ʽ���У�$(1,1),(1,2),\cdots,(1,outdeg_{1}+1),(2,1),\cdots,(n,outdeg_{n}+1)$���� $(1,1)$ ��ʼ�� dijkstra������ÿ���㣬��������������ĵ������ҵ���С��һ��������ɡ�</p>
+<h2 id="����">����</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> int long ong</span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1000005</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> M=<span class="number">2000005</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> inf=<span class="number">1e18</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> c,n,m,k;</span><br><span class="line"><span class="type">int</span> in[N],de[N];</span><br><span class="line"><span class="type">int</span> pre[N];</span><br><span class="line"><span class="type">int</span> outdeg[N];</span><br><span class="line"><span class="type">int</span> pod[N];</span><br><span class="line">vector&lt;pii&gt; vec[N];</span><br><span class="line"><span class="type">int</span> e[M],ne[M],w[M],h[N],tot;</span><br><span class="line"><span class="type">int</span> dis[N];</span><br><span class="line"><span class="type">bool</span> flag[N];</span><br><span class="line">priority_queue&lt;pii,vector&lt;pii&gt;,greater&lt;pii&gt;&gt; q;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">get</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> pod[u<span class="number">-1</span>]+k;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> c)</span> </span>&#123;</span><br><span class="line">    e[tot]=b,w[tot]=c,ne[tot]=h[a],h[a]=tot++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dijkstra</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    _rep(i,<span class="number">1</span>,N<span class="number">-1</span>) dis[i]=inf;</span><br><span class="line">    q.<span class="built_in">emplace</span>(pii&#123;dis[<span class="built_in">get</span>(<span class="number">1</span>,<span class="number">1</span>)]=<span class="number">0</span>,<span class="built_in">get</span>(<span class="number">1</span>,<span class="number">1</span>)&#125;);</span><br><span class="line">    <span class="keyword">while</span> (!q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        <span class="keyword">auto</span> tp=q.<span class="built_in">top</span>(); q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="type">int</span> u=tp.second;</span><br><span class="line">        <span class="keyword">if</span> (flag[u]) <span class="keyword">continue</span>;</span><br><span class="line">        flag[u]=<span class="literal">true</span>;</span><br><span class="line">        _graph(i,u) <span class="keyword">if</span> (dis[e[i]]&gt;dis[u]+w[i]) q.<span class="built_in">emplace</span>(pii&#123;dis[e[i]]=dis[u]+w[i],e[i]&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">i32 <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(h,<span class="number">-1</span>,<span class="built_in">sizeof</span>(h));</span><br><span class="line">    <span class="built_in">read</span>(c),<span class="built_in">read</span>(n),<span class="built_in">read</span>(m),<span class="built_in">read</span>(k);</span><br><span class="line">    _rep(i,<span class="number">1</span>,k<span class="number">-1</span>) <span class="built_in">read</span>(in[i]);</span><br><span class="line">    _rep(i,<span class="number">2</span>,k) <span class="built_in">read</span>(de[i]);</span><br><span class="line">    _rep(i,<span class="number">2</span>,k) pre[i]=pre[i<span class="number">-1</span>]+de[i];</span><br><span class="line">    _rep(i,<span class="number">1</span>,n) &#123;</span><br><span class="line">        <span class="type">int</span> d;</span><br><span class="line">        <span class="built_in">read</span>(d);</span><br><span class="line">        outdeg[i]=d;</span><br><span class="line">        <span class="keyword">while</span> (d--) &#123;</span><br><span class="line">            <span class="type">int</span> y,z;</span><br><span class="line">            <span class="built_in">read</span>(y),<span class="built_in">read</span>(z);</span><br><span class="line">            vec[i].<span class="built_in">emplace_back</span>(pii&#123;y,z&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    _rep(i,<span class="number">1</span>,n) pod[i]=pod[i<span class="number">-1</span>]+outdeg[i]<span class="number">+1</span>;</span><br><span class="line">    _rep(i,<span class="number">1</span>,n) &#123;</span><br><span class="line">        _rep(j,<span class="number">0</span>,(<span class="type">int</span>)vec[i].<span class="built_in">size</span>()<span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="type">int</span> t=<span class="built_in">min</span>(j<span class="number">+1</span>,outdeg[vec[i][j].first]);</span><br><span class="line">            <span class="keyword">if</span> (t) <span class="built_in">add</span>(<span class="built_in">get</span>(i,j<span class="number">+1</span>),<span class="built_in">get</span>(vec[i][j].first,t),vec[i][j].second+pre[j<span class="number">+1</span>]-pre[t]);</span><br><span class="line">            <span class="built_in">add</span>(<span class="built_in">get</span>(i,j<span class="number">+1</span>),<span class="built_in">get</span>(vec[i][j].first,outdeg[vec[i][j].first]<span class="number">+1</span>),vec[i][j].second);</span><br><span class="line">        &#125;</span><br><span class="line">        _rep(j,<span class="number">1</span>,outdeg[i]<span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">add</span>(<span class="built_in">get</span>(i,j),<span class="built_in">get</span>(i,j<span class="number">+1</span>),in[j]);</span><br><span class="line">            <span class="built_in">add</span>(<span class="built_in">get</span>(i,j<span class="number">+1</span>),<span class="built_in">get</span>(i,j),de[j<span class="number">+1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">dijkstra</span>();</span><br><span class="line">    _rep(i,<span class="number">1</span>,n) &#123;</span><br><span class="line">        <span class="type">int</span> ans=inf;</span><br><span class="line">        _rep(j,<span class="number">1</span>,outdeg[i]<span class="number">+1</span>) ans=<span class="built_in">min</span>(ans,dis[<span class="built_in">get</span>(i,j)]);</span><br><span class="line">        <span class="keyword">if</span> (ans==inf) <span class="built_in">writesp</span>(<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">writesp</span>(ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
       </div>
 
@@ -294,6 +303,29 @@
   </div>
   
     
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2025/08/17/beamer-how-to-use/"
+      title="Beamer 使用指南"
+     >
+
+    <p class="title-text">
+      
+        Beamer 使用指南
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
 
   
 </article>
