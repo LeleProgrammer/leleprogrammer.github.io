@@ -168,8 +168,8 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%EF%BF%BD%EF%BF%BD%EF%BF%BD/">
-                ���
+            <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">
+                题解
                 <div class="category-count">1</div>
             </a>
         </div>
@@ -210,9 +210,9 @@
       <h3 class="widget-title">最新文章</h3>
       <ul>
         
-          <a class="recent-link" href="/2025/08/17/luogu-p13271-solution/" title="��� P13271 [NOI2025] ������ ���" >
+          <a class="recent-link" href="/2025/08/17/luogu-p13271-solution/" title="洛谷 P13271 [NOI2025] 机器人 题解" >
             <div class="recent-link-text">
-              ��� P13271 [NOI2025] ������ ���
+              洛谷 P13271 [NOI2025] 机器人 题解
             </div>
           </a>
         
@@ -252,7 +252,7 @@
   
     
       <h1 itemprop="name">
-        <a class="p-name article-title" href="/2025/08/17/luogu-p13271-solution/">��� P13271 [NOI2025] ������ ���</a>
+        <a class="p-name article-title" href="/2025/08/17/luogu-p13271-solution/">洛谷 P13271 [NOI2025] 机器人 题解</a>
       </h1>
     
   
@@ -265,13 +265,13 @@
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-  <a class="meta-cate-link" href="/categories/%EF%BF%BD%EF%BF%BD%EF%BF%BD/">���</a>
+  <a class="meta-cate-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            2.2k 词 
+            2.1k 词 
           </div>
         </div>
         
@@ -282,11 +282,13 @@
         
           <div class="truncate-text">
             
-              ��� P13271 [NOI2025] ������ ���
-һ���Ƚϲ����ķֲ�ͼ��Ŀ����¼һ�¡�
-˼·
-����һ���� $i$���������ĳ���Ϊ $outdeg_i$����ô���� $outdeg_i + 1$ ���㣬����һ���ߣ������������ $i$ �ĵ� $j$ ���ߣ���ô $i$ �ĵ� $j$ ���������յ� $dest$ �ĵ� $j$ ���㣬�������㲻���ڣ���ô�����ӵ� $j$ �ĵ� $outdeg_{dest}$ ����ͬʱ���� $p$ �½����ⲿ��ֵ����ǰ׺����� $w$ ��һ�εĺͣ�ͬʱ $i$ �ĵ� $j$ ������ $dest$ �ĵ� $outdeg_{dest}+1$ �������ߡ�����һ�����ǰ $outdeg_{dest}$ ���㣬�������㰴�� $v,w$ ���ߡ�
-��ı�ſ��԰������·�ʽ���У�$(1,1),(1,2),\cdots,(1,outdeg_{1}+1),(2,1),\cdot...
+              洛谷 P13271 [NOI2025] 机器人 题解
+一道比较不错的分层图题目，记录一下。
+思路
+对于一个点 $i$，假设它的出度为 $outdeg_i$，那么建立 $outdeg_i + 1$ 个点，对于一条边，如果这条边是 $i$ 的第 $j$ 条边，那么 $i$ 的第 $j$ 个点连到终点 $dest$ 的第 $j$ 个点，如果这个点不存在，那么就连接到 $j$ 的第 $outdeg_{dest}$ 个点同时加上 $p$ 下降的这部分值，用前缀和求出 $w$ 的一段的和，同时 $i$ 的第 $j$ 个点向 $dest$ 的第 $outdeg_{dest}+1$ 个点连边。对于一个点的前 $outdeg_{dest}$ 个点，相邻两点按照 $v,w$ 连边。
+点的编号可以按照如下方式排列，$(1,1),(1,2),\cdots,(1,outdeg_{1}+1),(2,1),\cdots,(n,outdeg_{n}+1)$，从 $(1,1)$ 开始跑 dijkstra，对于每个点，在它附属的下面的点里面找到最小的一个输出即可。
+代码
+1234567891011121314151...
             
           </div>
         
