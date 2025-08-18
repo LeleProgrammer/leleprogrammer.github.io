@@ -14,19 +14,24 @@
   
 
   
-  <title>LeleBlog</title>
+  <title>2025 JZ Summer Camp | LeleBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="LeleBlog">
-<meta property="og:url" content="https://leleprogrammer.github.io/index.html">
+  <meta name="description" content="2025 JZ Summer Camp 8.18 早上来了安排机位，忙活了一会儿，没时间打比赛了，就把比赛留到下午来打。 没事先开道题目来写，$\text{P3227}$，一道挺不错的网络流图论建模题，感觉有必要记录一下。题意是这样的，给定了一个长方体，对于每一个 $(x,y)$，我们能且仅能找到一个点 $(x,y,z)$，然后将 $v(x,y,z)$ 加入答案，并且 $(x,y)$ 四连通方向选">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2025 JZ Summer Camp">
+<meta property="og:url" content="https://leleprogrammer.github.io/2025/08/18/2025-JZ-Summer-Camp/index.html">
 <meta property="og:site_name" content="LeleBlog">
+<meta property="og:description" content="2025 JZ Summer Camp 8.18 早上来了安排机位，忙活了一会儿，没时间打比赛了，就把比赛留到下午来打。 没事先开道题目来写，$\text{P3227}$，一道挺不错的网络流图论建模题，感觉有必要记录一下。题意是这样的，给定了一个长方体，对于每一个 $(x,y)$，我们能且仅能找到一个点 $(x,y,z)$，然后将 $v(x,y,z)$ 加入答案，并且 $(x,y)$ 四连通方向选">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-18T15:27:45.000Z">
+<meta property="article:modified_time" content="2025-08-18T15:29:40.201Z">
 <meta property="article:author" content="Lele">
+<meta property="article:tag" content="游记">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="LeleBlog" type="application/atom+xml">
@@ -54,14 +59,14 @@
   
   
     
-<div id="banner" class=" is_home ">
+<div id="banner" class="">
   <img src="/bg.jpg" itemprop="image">
   <div id="banner-dim"></div>
 </div>
  
    
   <div id="main-grid" class="  ">
-    <div id="nav" class=" is_home "  >
+    <div id="nav" class=""  >
       <navbar id="navbar">
   <nav id="title-nav">
     <a href="/">
@@ -248,11 +253,12 @@
 </sidebar>
     </div>
     <div id="content-body">
-      
-   
+       
 
 
 <article id="post-2025-JZ-Summer-Camp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
    
   <div class="article-inner">
     <div class="article-main">
@@ -262,8 +268,8 @@
   <div class="main-title-dot"></div>
   
     
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2025/08/18/2025-JZ-Summer-Camp/">2025 JZ Summer Camp</a>
+      <h1 class="p-name article-title" itemprop="headline name">
+        2025 JZ Summer Camp
       </h1>
     
   
@@ -291,14 +297,23 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <div class="truncate-text">
-            
-              2025 JZ Summer Camp
-8.18
-早上来了安排机位，忙活了一会儿，没时间打比赛了，就把比赛留到下午来打。
-没事先开道题目来写，$\text{P3227}$，一道挺不错的网络流图论建模题，感觉有必要记录一下。题意是这样的，给定了一个长方体，对于每一个 $(x,y)$，我们能且仅能找到一个点 $(x,y,z)$，然后将 $v(x,y,z)$ 加入答案，并且 $(x,y)$ 四连通方向选的点的 $z$ 不能与它差 $D$ 以上。很明显可以用最小割来做掉这道题，现在考虑如何建图，最小割的题目的建模突破口就是各个限制，第一个限制就是每一个 $(x,y)$ 能且仅能选一个 $z$，那不妨对于每一个 $(x,y)$ 都连一条链，形如 $S \rightarrow (x,y,1) \rightarrow (x,y,2) \rightarrow \cdots(x,y,z_{\max}) \rightarrow (x,y,z_{\max}+1) \rightarrow T$，边权分别为 $\infty,v(x,y,1),v(x,y,2),\cdots,v(x,y,z_{\max}),...
-            
-          </div>
+          <h1>2025 JZ Summer Camp</h1>
+<h2 id="8-18">8.18</h2>
+<p>早上来了安排机位，忙活了一会儿，没时间打比赛了，就把比赛留到下午来打。</p>
+<p>没事先开道题目来写，$\text{P3227}$，一道挺不错的网络流图论建模题，感觉有必要记录一下。题意是这样的，给定了一个长方体，对于每一个 $(x,y)$，我们能且仅能找到一个点 $(x,y,z)$，然后将 $v(x,y,z)$ 加入答案，并且 $(x,y)$ 四连通方向选的点的 $z$ 不能与它差 $D$ 以上。很明显可以用最小割来做掉这道题，现在考虑如何建图，最小割的题目的建模突破口就是各个限制，第一个限制就是每一个 $(x,y)$ 能且仅能选一个 $z$，那不妨对于每一个 $(x,y)$ 都连一条链，形如 $S \rightarrow (x,y,1) \rightarrow (x,y,2) \rightarrow \cdots(x,y,z_{\max}) \rightarrow (x,y,z_{\max}+1) \rightarrow T$，边权分别为 $\infty,v(x,y,1),v(x,y,2),\cdots,v(x,y,z_{\max}),\infty$，很明显要把这条链断掉，就是在上述边权中选取 $\min$ 来取。接下来考虑第二个限制，相邻的 $(x,y)$ 所选的点距离不超过 $D$，那么我们从 $(x,y,z)$ 向 $(x’,y’,z-D)$ 连一条 $\infty$ 的边，这样一来，如果 $(x,y)$ 选了一个在 $z$ 后面的点，而 $(x’,y’)$ 选了一个 $z-D$ 前面的点，那么我们就有一条这样的链，形如 $S \rightarrow (x,y,1) \rightarrow \cdots \rightarrow (x,y,z) \rightarrow (x’,y’,z-D) \rightarrow (x’,y’,z-D+1) \rightarrow \cdots \rightarrow T$，即 $S,T$ 连通，这显然不符合割的定义，所以这种情况不会发生，所以按照上述方式建图然后跑 $\text{dinic}$ 就切掉这道题了。</p>
+<p>lzh 一直在刷 $\text{GESP}$ $8$ 级题，刚好刷到我第一次打 $\text{G8}$ 考的那套题的 $\text{T2}$，lzh 已经写了一大半了，我再写一遍，两次就过了，后面 yxy 也过了，而 lzh 大佬竟然写到中午都没写过……</p>
+<p>中午去吃白菜猪排鸡排，刷脸付不了钱，余额不足，好好好之前充的 $200$ 块直接给我吞掉了，还是 lzh 帮我付的，这里给 lzh 送一朵电子鲜花（）。</p>
+<p>中午没事干，和 lzh 去外面逛一圈，顺便买饮料，嗯还是 lzh 帮忙付钱，再给 lzh 送一朵电子鲜花（）（），后面溜达到高一宿舍，反正再过几天就要入住了，提前去瞄一眼，溜了溜了。</p>
+<p>下午打比赛，$202,203,204$ 三个机房打不同的比赛。</p>
+<p>嗯先开 $\text{T1}$，诶这不就是染色法判定二分图吗，秒。</p>
+<p>信心大增看 $\text{T2}$，嗯要求或最小生成树，超级简单，从最高位到最低位扫一遍，看看能不能禁掉边权的某些位，跑 $\log$ 次 $\text{Kruskal}$ 即可，秒。</p>
+<p>$\text{T3}$ 也是老板子了，一开始有个地方写错了一直 $90\text{pts}$，不应该啊怎么分这么高，数据太水啦，后面改了改还是很快就过了。</p>
+<p>$\text{T4}$ 弱化版树剖板子，为什么弱化版呢，因为没有路径操作只有子树操作，哎呀秒秒秒了，然后呢有些大佬交上去就剩 $\text{5pts}$ 了，后面才发现原来是数据的询问次数 $q$ 没放进数据里面，而造数据用的是快读，自动取操作里面的第一个整数作为 $q$，好我也是快读太棒了直接就过了，首 $\text{AK}$。</p>
+<p>豪哥看我没事干，让我把隔壁的比赛也做一做，呃由于题目过于简单这里就不讲了，容易降智，迅速 $\text{AK}$，甚至还取得首 $\text{AK}$。</p>
+<p>豪哥看我没事干，让我把隔壁的隔壁的比赛也坐一坐，呃由于题目还是过于简单这里就不讲了，容易降智，迅速 $\text{AK}$，嗯还是首 $\text{AK}$。（嗯这一段我不是从上一段复制来的你信吗）</p>
+<p>后面打听了一下，原来今天最原先的那场比赛是 $\text{CF}$ 比赛原题的 $\text{Mashup}$，总体评分在 $1700$ 左右，嗯倒不如来一道 $2000+$ 的过过瘾。</p>
+<p>听说明天比赛很难，嗯已经准备好爆零了，今天就记这么多吧，鄙人太菜，还请屏幕前的诸位大佬多多海涵。</p>
+
         
       </div>
 
@@ -306,279 +321,35 @@
     </div>
     
      
-    <a class="right-panel  non-pic  "
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2025/08/17/luogu-p13271-solution/"
+      title="洛谷 P13271 [NOI2025] 机器人 题解"
+     >
+
+    <p class="title-text">
       
-      href="/2025/08/18/2025-JZ-Summer-Camp/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
+        洛谷 P13271 [NOI2025] 机器人 题解
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
   
 </article>
-
-
-
-
-
-
-   
-
-
-<article id="post-luogu-p13271-solution" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2025/08/17/luogu-p13271-solution/">洛谷 P13271 [NOI2025] 机器人 题解</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2025-08-17T15:39:35.000Z" itemprop="datePublished">2025-08-17</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            2.1k 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NOI/" rel="tag">NOI</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-              洛谷 P13271 [NOI2025] 机器人 题解
-一道比较不错的分层图题目，记录一下。
-思路
-对于一个点 $i$，假设它的出度为 $outdeg_i$，那么建立 $outdeg_i + 1$ 个点，对于一条边，如果这条边是 $i$ 的第 $j$ 条边，那么 $i$ 的第 $j$ 个点连到终点 $dest$ 的第 $j$ 个点，如果这个点不存在，那么就连接到 $j$ 的第 $outdeg_{dest}$ 个点同时加上 $p$ 下降的这部分值，用前缀和求出 $w$ 的一段的和，同时 $i$ 的第 $j$ 个点向 $dest$ 的第 $outdeg_{dest}+1$ 个点连边。对于一个点的前 $outdeg_{dest}$ 个点，相邻两点按照 $v,w$ 连边。
-点的编号可以按照如下方式排列，$(1,1),(1,2),\cdots,(1,outdeg_{1}+1),(2,1),\cdots,(n,outdeg_{n}+1)$，从 $(1,1)$ 开始跑 dijkstra，对于每个点，在它附属的下面的点里面找到最小的一个输出即可。
-代码
-1234567891011121314151...
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2025/08/17/luogu-p13271-solution/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-
-   
-
-
-<article id="post-beamer-how-to-use" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2025/08/17/beamer-how-to-use/">Beamer 使用指南</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2025-08-17T14:28:03.000Z" itemprop="datePublished">2025-08-17</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            3k 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Beamer/" rel="tag">Beamer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Latex/" rel="tag">Latex</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-              TexStudio Beamer 使用指南
-建立一个最简单的页面
-12345678910111213141516171819202122\documentclass[UTF8]&#123;ctexbeamer&#125;\usepackage&#123;amsmath&#125; % 基本数学支持\usepackage&#123;amssymb&#125; % 数学符号扩展\usefonttheme[onlymath]&#123;serif&#125;\usetheme&#123;Madrid&#125;% 这是注释\title&#123;Document Title&#125;\subtitle&#123;Sub Title&#125;\author&#123;Lele&#125;\institute&#123;Shantou Jinshan Senior High School&#125;\date&#123;2025.08.17&#125;\begin&#123;document&#125;    \frame&#123;\titlepage&#125;    \begin...
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2025/08/17/beamer-how-to-use/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-
-   
-
-
-<article id="post-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2025/08/16/test/">测试</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2025-08-16T08:13:26.000Z" itemprop="datePublished">2025-08-16</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            384 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-              测试
-一级标题
-二级标题
-三级标题
-四级标题
-五级标题
-六级标题
-正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文。
-正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文。
-
-引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用引用
-引用引用引用引用引用引用引用引用引用引用
-
-
-first.
-second.
-third.
-
-
-todo 1
-todo 2
-todo 3
-
-这是公式：
-$$
-\sum\limits_{i=0}^n a_i^2
-$$
-这是公式：$\frac{1}{2}=0.5$
-11 2 3 4 5
-1#include &lt;bits/stdc++.h&gt;
-12import pygamepygame.init()
-
-
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  with-pic  "
-       style="background-image: url(/2025/08/16/%E6%B5%8B%E8%AF%95/bg.jpg)" 
-      href="/2025/08/16/test/" 
-    >
-       
-      <div class="overlay">
-        <i class="fa-solid fa-angle-right with-pic"></i>
-      </div>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
 
 
 
