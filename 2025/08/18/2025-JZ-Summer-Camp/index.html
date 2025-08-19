@@ -14,24 +14,23 @@
   
 
   
-  <title>2025 JZ Summer Camp | LeleBlog</title>
+  <title>LeleBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="2025 JZ Summer Camp 8.18 早上来了安排机位，忙活了一会儿，没时间打比赛了，就把比赛留到下午来打。 没事先开道题目来写，$\text{P3227}$，一道挺不错的网络流图论建模题，感觉有必要记录一下。题意是这样的，给定了一个长方体，对于每一个 $(x,y)$，我们能且仅能找到一个点 $(x,y,z)$，然后将 $v(x,y,z)$ 加入答案，并且 $(x,y)$ 四连通方向选">
+  <meta name="description" content="2025 JZ Summer Camp 可能更好的阅读体验 8.18 早上来了安排机位，忙活了一会儿，没时间打比赛了，就把比赛留到下午来打。 没事先开道题目来写，$\text{P3227}$，一道挺不错的网络流图论建模题，感觉有必要记录一下。题意是这样的，给定了一个长方体，对于每一个 $(x,y)$，我们能且仅能找到一个点 $(x,y,z)$，然后将 $v(x,y,z)$ 加入答案，并且 $(x,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2025 JZ Summer Camp">
+<meta property="og:title" content="LeleBlog">
 <meta property="og:url" content="https://leleprogrammer.github.io/2025/08/18/2025-JZ-Summer-Camp/index.html">
 <meta property="og:site_name" content="LeleBlog">
-<meta property="og:description" content="2025 JZ Summer Camp 8.18 早上来了安排机位，忙活了一会儿，没时间打比赛了，就把比赛留到下午来打。 没事先开道题目来写，$\text{P3227}$，一道挺不错的网络流图论建模题，感觉有必要记录一下。题意是这样的，给定了一个长方体，对于每一个 $(x,y)$，我们能且仅能找到一个点 $(x,y,z)$，然后将 $v(x,y,z)$ 加入答案，并且 $(x,y)$ 四连通方向选">
+<meta property="og:description" content="2025 JZ Summer Camp 可能更好的阅读体验 8.18 早上来了安排机位，忙活了一会儿，没时间打比赛了，就把比赛留到下午来打。 没事先开道题目来写，$\text{P3227}$，一道挺不错的网络流图论建模题，感觉有必要记录一下。题意是这样的，给定了一个长方体，对于每一个 $(x,y)$，我们能且仅能找到一个点 $(x,y,z)$，然后将 $v(x,y,z)$ 加入答案，并且 $(x,">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-08-18T15:27:45.000Z">
-<meta property="article:modified_time" content="2025-08-18T15:29:40.201Z">
+<meta property="article:published_time" content="2025-08-18T15:27:45.150Z">
+<meta property="article:modified_time" content="2025-08-19T15:35:57.918Z">
 <meta property="article:author" content="Lele">
-<meta property="article:tag" content="游记">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="LeleBlog" type="application/atom+xml">
@@ -175,12 +174,7 @@
         
             <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">
                 题解
-                <div class="category-count">1</div>
-            </a>
-        
-            <a class="category-link" href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/">
-                生活记录
-                <div class="category-count">1</div>
+                <div class="category-count">2</div>
             </a>
         </div>
     </div>
@@ -192,7 +186,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">标签</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Beamer/" rel="tag">Beamer</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Latex/" rel="tag">Latex</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/NOI/" rel="tag">NOI</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B8%B8%E8%AE%B0/" rel="tag">游记</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Beamer/" rel="tag">Beamer</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Latex/" rel="tag">Latex</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/NOI/" rel="tag">NOI</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B4%9B%E8%B0%B7%E6%AF%94%E8%B5%9B/" rel="tag">洛谷比赛</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
     </div>
   </div>
 
@@ -206,7 +200,7 @@
       
         <a class="archive-link" href="/archives/2025/08 ">
           八月 2025 
-          <div class="archive-count">4 </div>
+          <div class="archive-count">5 </div>
         </a>
       
     </div>
@@ -220,9 +214,15 @@
       <h3 class="widget-title">最新文章</h3>
       <ul>
         
-          <a class="recent-link" href="/2025/08/18/2025-JZ-Summer-Camp/" title="2025 JZ Summer Camp" >
+          <a class="recent-link" href="/2025/08/19/luogu-p13777-solution/" title="luogu-p13777-solution" >
             <div class="recent-link-text">
-              2025 JZ Summer Camp
+              luogu-p13777-solution
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/08/18/2025-JZ-Summer-Camp/" title="" >
+            <div class="recent-link-text">
+              (no title)
             </div>
           </a>
         
@@ -269,7 +269,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        2025 JZ Summer Camp
+        无标题
       </h1>
     
   
@@ -277,27 +277,26 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2025-08-18T15:27:45.000Z" itemprop="datePublished">2025-08-18</time>
+  <time class="dt-published" datetime="2025-08-18T15:27:45.150Z" itemprop="datePublished">2025-08-18</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-  <a class="meta-cate-link" href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/">生活记录</a>
+    未分类 
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.8k 词 
+            3k 词 
           </div>
         </div>
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B8%B8%E8%AE%B0/" rel="tag">游记</a></li></ul>
-
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
           <h1>2025 JZ Summer Camp</h1>
+<p><a href="https://leleprogrammer.github.io/2025/08/18/2025-JZ-Summer-Camp/">可能更好的阅读体验</a></p>
 <h2 id="8-18">8.18</h2>
 <p>早上来了安排机位，忙活了一会儿，没时间打比赛了，就把比赛留到下午来打。</p>
 <p>没事先开道题目来写，$\text{P3227}$，一道挺不错的网络流图论建模题，感觉有必要记录一下。题意是这样的，给定了一个长方体，对于每一个 $(x,y)$，我们能且仅能找到一个点 $(x,y,z)$，然后将 $v(x,y,z)$ 加入答案，并且 $(x,y)$ 四连通方向选的点的 $z$ 不能与它差 $D$ 以上。很明显可以用最小割来做掉这道题，现在考虑如何建图，最小割的题目的建模突破口就是各个限制，第一个限制就是每一个 $(x,y)$ 能且仅能选一个 $z$，那不妨对于每一个 $(x,y)$ 都连一条链，形如 $S \rightarrow (x,y,1) \rightarrow (x,y,2) \rightarrow \cdots(x,y,z_{\max}) \rightarrow (x,y,z_{\max}+1) \rightarrow T$，边权分别为 $\infty,v(x,y,1),v(x,y,2),\cdots,v(x,y,z_{\max}),\infty$，很明显要把这条链断掉，就是在上述边权中选取 $\min$ 来取。接下来考虑第二个限制，相邻的 $(x,y)$ 所选的点距离不超过 $D$，那么我们从 $(x,y,z)$ 向 $(x’,y’,z-D)$ 连一条 $\infty$ 的边，这样一来，如果 $(x,y)$ 选了一个在 $z$ 后面的点，而 $(x’,y’)$ 选了一个 $z-D$ 前面的点，那么我们就有一条这样的链，形如 $S \rightarrow (x,y,1) \rightarrow \cdots \rightarrow (x,y,z) \rightarrow (x’,y’,z-D) \rightarrow (x’,y’,z-D+1) \rightarrow \cdots \rightarrow T$，即 $S,T$ 连通，这显然不符合割的定义，所以这种情况不会发生，所以按照上述方式建图然后跑 $\text{dinic}$ 就切掉这道题了。</p>
@@ -313,6 +312,13 @@
 <p>豪哥看我没事干，让我把隔壁的隔壁的比赛也坐一坐，呃由于题目还是过于简单这里就不讲了，容易降智，迅速 $\text{AK}$，嗯还是首 $\text{AK}$。（嗯这一段我不是从上一段复制来的你信吗）</p>
 <p>后面打听了一下，原来今天最原先的那场比赛是 $\text{CF}$ 比赛原题的 $\text{Mashup}$，总体评分在 $1700$ 左右，嗯倒不如来一道 $2000+$ 的过过瘾。</p>
 <p>听说明天比赛很难，嗯已经准备好爆零了，今天就记这么多吧，鄙人太菜，还请屏幕前的诸位大佬多多海涵。</p>
+<h2 id="8-19">8.19</h2>
+<p>早早到，准备开赛，嗯先看 $\text{T1}$，好的看懂题意了肚子不舒服先去拉了（）。回来的时候差不多想到正解了，准备开打，$\text{pia}$ 的一声停电了，大家基本都出去打球了，以为 wzy 去打羽毛球了，实则并没有，找了一圈没有找到，回来机房坐会，差不多来电了，是 JZ 自己发电的，功率撑不了太大，就不开空调了，热死。</p>
+<p>把 $\text{T1}$ 的代码打完，发现统计部分有点假，答案是要求 $\sum (i*ans_i \bmod (10^9+7))$，也就是每一个的答案取模后再加，加起来的时候不取模，大样例都没过，后面捣鼓了一下用差分统计贡献，发现挺不错的，调来调去终于把大样例过了，然后交上去，$\text{WA}$ $0\text{pts}$，原来是要加 <code>freopen</code>，加上去之后就过了，个人感觉难度有中蓝，统计贡献有点复杂。</p>
+<p>这里记录一下 $\text{T1}$ 做法，先简要说一下题意吧，给定一个括号串，记 $ans_i$ 为 $l \le i \le r$ 的合法括号串 $[l,r]$ 的数量，求 $\sum (i \times ans_i \bmod (10^9+7))$，思路就是开个栈存储每一个没有被匹配的左括号，每一次来右括号的时候，把这对匹配的括号里面的每一个并列的块拿出来，就比如 <code>( (...)(...)(...)...(...) )</code> 这里面的块，我们让外层的左括号来维护它内层的若干个块的左括号的下标，对于每一个块，它左右分别有 $l,r$ 块，那么这个块内每个点的答案都会加上 $(l+1) \times (r+1)$，把这个计算完之后呢，把匹配掉的这个左括号放到再外层的一个左括号所维护的信息里面，这道题还要处理很多边界条件，我们维护一个 $las$，当左右括号匹配完后，栈里面没东西了，找不到更外层的左括号了，就默认左括号的位置是 $las$，然后当栈空时遇到右括号，则将 $las$ 更新为这个右括号的下标，在这之前别忘了再统计前一次 $las$ 维护的信息，在遍历完之后，栈内如果还留有东西，我们还要一个个弹出来把还没有算的答案算进去，那么这道题就做完了。</p>
+<p>后面三题没空看了，吃饭去了，今天刷脸支付终于可以用了，吃完回来和 lzh 下中国象棋，若干次一换一到最后双方车马均剩一个，炮全无，以及若干其它棋子，剩下残局没空继续了，明天再来，先打洛谷比赛去了。</p>
+<p>报 $\text{Rated}$，开幕雷击交互题，不过非常简单哈直接切掉，$\text{T2}$ 纯诈骗啊随便判一下就过了，不过前面还 $\text{WA}$ 了一发，$\text{T3}$ 暴推式子，排列组合乱搞一通就过了，不过呢答案除以二我直接 naive 地右移 $1$ 位，导致部分 $\text{WA}$，后面改成 $\times 2^{-1}$ （逆元）即可。</p>
+<p>后面三道紫题，呃最后几分钟极限骗 $60\text{pts}$，总分 $360\text{pts}$，排 $32$ 名，遗憾离场，升是不可能了，估计会掉一点分。</p>
 
         
       </div>
@@ -325,10 +331,15 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left  disabled "
+  <a class="article-nav-btn left "
+    
+      href="/2025/08/19/luogu-p13777-solution/"
+      title="luogu-p13777-solution"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
+      
+        luogu-p13777-solution
         
     </p>
   </a>
