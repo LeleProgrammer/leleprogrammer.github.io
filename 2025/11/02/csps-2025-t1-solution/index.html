@@ -14,19 +14,25 @@
   
 
   
-  <title>目录: 测试 | LeleBlog</title>
+  <title>CSP-S 2025 T1 题解 | LeleBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="LeleBlog">
-<meta property="og:url" content="https://leleprogrammer.github.io/categories/%E6%B5%8B%E8%AF%95/index.html">
+  <meta name="description" content="CSP-S 2025 T1 题解 思路 我们可以贪心地让每一个成员都选择满意度最大的那一个，此时如果某个部门的人数已经超过了一半，那么我们就需要从这里面抽出一部分人去取次大的那一个，所以排序，记一个人最大、次大分别是 $a,b$，那么我们尽可能取 $a-b$ 小的，也就是让答案减少得慢一些，这道题就做完了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSP-S 2025 T1 题解">
+<meta property="og:url" content="https://leleprogrammer.github.io/2025/11/02/csps-2025-t1-solution/index.html">
 <meta property="og:site_name" content="LeleBlog">
+<meta property="og:description" content="CSP-S 2025 T1 题解 思路 我们可以贪心地让每一个成员都选择满意度最大的那一个，此时如果某个部门的人数已经超过了一半，那么我们就需要从这里面抽出一部分人去取次大的那一个，所以排序，记一个人最大、次大分别是 $a,b$，那么我们尽可能取 $a-b$ 小的，也就是让答案减少得慢一些，这道题就做完了。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-11-02T01:54:56.000Z">
+<meta property="article:modified_time" content="2025-11-02T01:58:12.141Z">
 <meta property="article:author" content="Lele">
+<meta property="article:tag" content="OI">
+<meta property="article:tag" content="CSP">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="LeleBlog" type="application/atom+xml">
@@ -272,44 +278,98 @@
     <div id="content-body">
        
 
-<div class="archive-main-card">
-    <div class="archive-top">
-      <div class="main-title-bar">
-        <div class="main-title-dot"></div>
-        <h1 class="article-title">归档</h1>
-      </div>    
+
+<article id="post-csps-2025-t1-solution" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        CSP-S 2025 T1 题解
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2025-11-02T01:54:56.000Z" itemprop="datePublished">2025-11-02</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            146 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSP/" rel="tag">CSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OI/" rel="tag">OI</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h1>CSP-S 2025 T1 题解</h1>
+<h2 id="思路">思路</h2>
+<p>我们可以贪心地让每一个成员都选择满意度最大的那一个，此时如果某个部门的人数已经超过了一半，那么我们就需要从这里面抽出一部分人去取次大的那一个，所以排序，记一个人最大、次大分别是 $a,b$，那么我们尽可能取 $a-b$ 小的，也就是让答案减少得慢一些，这道题就做完了。</p>
+
+        
+      </div>
+
+         
     </div>
     
-    
-      
-      
-        
-        <div class="year-line">
-            <div class="year-num">2025</div>
-            <div class="dot-wrapper">
-                <div class="dot"></div>
-            </div>
-            <div class="article-count">1 篇文章</div>
-        </div>
-      
-      <a class="archive-article-link" href="/2025/08/16/test/" title="测试">
-        <div class="date">08-16</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    测试
-                
-            </div>
-        </div>
-        <div class="tags">
-            #测试
-        </div>
-      </a>
-    
+     
   </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2025/11/02/csps-2025-t2-solution/"
+      title="CSP-S 2025 T2 题解"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        CSP-S 2025 T2 题解
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2025/11/02/luogu-p14255-solution/"
+      title="洛谷 P14255 列车（train） 题解"
+     >
+
+    <p class="title-text">
+      
+        洛谷 P14255 列车（train） 题解
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+
+
+
+
     </div>
     <div id="footer-wrapper">
       <footer id="footer">
