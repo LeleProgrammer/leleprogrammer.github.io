@@ -163,14 +163,14 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%E6%95%99%E7%A8%8B/">
-                教程
-                <div class="category-count">1</div>
-            </a>
-        
             <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">
                 题解
                 <div class="category-count">8</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%95%99%E7%A8%8B/">
+                教程
+                <div class="category-count">1</div>
             </a>
         
             <a class="category-link" href="/categories/%E6%B5%8B%E8%AF%95/">
@@ -304,7 +304,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            561 词 
+            402 词 
           </div>
         </div>
         
@@ -315,12 +315,11 @@
         
           <div class="truncate-text">
             
-              CSP-S 2025 T2 题解
-思路
-注意到 n≤104n \le 10^4n≤10​4​​ 并不很大，以及 k≤10k \le 10k≤10，所以复杂度瓶颈肯定跟这两个东西有关。
-枚举 kkk 个二进制位表示对应的乡镇是否改造，对于改造的乡镇，把它们分别的 nnn 条边加到原 mmm 条边里面去跑 Kruskal，时间复杂度 O(2k(kn+m)log(kn+m))\mathcal{O}(2^k (kn+m) \log (kn+m))O(2​k​​(kn+m)log(kn+m))。
-定睛一看 m≤106m \le 10^6m≤10​6​​，这显然过不去，所以考虑先将原图跑一遍 Kruskal，于是这 mmm 条边有用的就只有 n−1n-1n−1 条了，时间复杂度 O(mlogm+2kknlogkn)\mathcal{O}(m \log m + 2^k kn \log kn)O(mlogm+2​k​​knlogkn)。
-发现这个复杂度我们还是接受不了，于是我们可以在一开始将预处理出的 n−1n-1n−1 条边和 knknkn 条边放一起排序，每一次做 Kruskal 的时候就不...
+              CSP-S 2025 T2 题解思路注意到 $n \le 10^4$ 并不很大，以及 $k \le 10$，所以复杂度瓶颈肯定跟这两个东西有关。
+枚举 $k$ 个二进制位表示对应的乡镇是否改造，对于改造的乡镇，把它们分别的 $n$ 条边加到原 $m$ 条边里面去跑 Kruskal，时间复杂度 $\mathcal{O}(2^k (kn+m) \log (kn+m))$。
+定睛一看 $m \le 10^6$，这显然过不去，所以考虑先将原图跑一遍 Kruskal，于是这 $m$ 条边有用的就只有 $n-1$ 条了，时间复杂度 $\mathcal{O}(m \log m + 2^k kn \log kn)$。
+发现这个复杂度我们还是接受不了，于是我们可以在一开始将预处理出的 $n-1$ 条边和 $kn$ 条边放一起排序，每一次做 Kruskal 的时候就不用去排序了，遇到属于没有改造的乡镇的边就不管它就行了，时间复杂度 $\mathcal{O}(m \log m + kn \log kn + 2^k kn)$。
+
             
           </div>
         
@@ -381,7 +380,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            154 词 
+            146 词 
           </div>
         </div>
         
@@ -392,9 +391,7 @@
         
           <div class="truncate-text">
             
-              CSP-S 2025 T1 题解
-思路
-我们可以贪心地让每一个成员都选择满意度最大的那一个，此时如果某个部门的人数已经超过了一半，那么我们就需要从这里面抽出一部分人去取次大的那一个，所以排序，记一个人最大、次大分别是 a,ba,ba,b，那么我们尽可能取 a−ba-ba−b 小的，也就是让答案减少得慢一些，这道题就做完了。
+              CSP-S 2025 T1 题解思路我们可以贪心地让每一个成员都选择满意度最大的那一个，此时如果某个部门的人数已经超过了一半，那么我们就需要从这里面抽出一部分人去取次大的那一个，所以排序，记一个人最大、次大分别是 $a,b$，那么我们尽可能取 $a-b$ 小的，也就是让答案减少得慢一些，这道题就做完了。
 
             
           </div>
@@ -456,7 +453,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            6.5k 词 
+            6.4k 词 
           </div>
         </div>
         
@@ -467,12 +464,11 @@
         
           <div class="truncate-text">
             
-              洛谷 P14255 题解
-思路
-记 epiep_iep​i​​ 表示第 iii 站作为起点站时第一个可行的终点站的下标，pip_ip​i​​ 表示第 iii 站的位置，disidis_idis​i​​ 表示从 iii 这个起点站开始走到它的第一个终点站的距离。
-上面几个东西非常容易求，于是考虑将这个东西推广到区间，令 epl,rep_{l,r}ep​l,r​​ 表示下标 lll 到 rrr 之间的所有起点站对应的终点站的下标的最大值，令 pl,rp_{l,r}p​l,r​​ 表示下标 lll 到 rrr 之间的站点位置的最小值，令 disl,rdis_{l,r}dis​l,r​​ 表示下标 lll 到 rrr 之间的所有起点站到其对应的终点站的距离的最小值，将这些丢到线段树去维护。
+              洛谷 P14255 题解思路记 $ep_i$ 表示第 $i$ 站作为起点站时第一个可行的终点站的下标，$p_i$ 表示第 $i$ 站的位置，$dis_i$ 表示从 $i$ 这个起点站开始走到它的第一个终点站的距离。
+上面几个东西非常容易求，于是考虑将这个东西推广到区间，令 $ep_{l,r}$ 表示下标 $l$ 到 $r$ 之间的所有起点站对应的终点站的下标的最大值，令 $p_{l,r}$ 表示下标 $l$ 到 $r$ 之间的站点位置的最小值，令 $dis_{l,r}$ 表示下标 $l$ 到 $r$ 之间的所有起点站到其对应的终点站的距离的最小值，将这些丢到线段树去维护。
 接下来考虑对于每种操作怎么去处理。
-对于操作一，我们要让起点在 xxx 之后的线路的首个可达终点站与 y+1y+1y+1 取 max\maxmax，容易知道 epepep 这个东西是单调不减的，所以真的会修改到的地方就是 xxx 到最后一个 ep≤y+1ep \le y+1ep≤y+1 的位置，要找出...
+对于操作一，我们要让起点在 $x$ 之后的线路的首个可达终点站与 $y+1$ 取 $\max$，容易知道 $ep$ 这个东西是单调不减的，所以真的会修改到的地方就是 $x$ 到最后一个 $ep \le y+1$ 的位置，要找出这个右界，显然可以在线段树上跑二分。
+对于操作二，起点站肯定是要在 $[1,x]$ 之间的，这里依旧可以分成两部分。前半部分是 $ep \le y$ 的...
             
           </div>
         
@@ -533,7 +529,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            605 词 
+            3.5k 词 
           </div>
         </div>
         
@@ -544,12 +540,10 @@
         
           <div class="truncate-text">
             
-              洛谷 P14254 题解
-思路
-首先，可以想到如果这 kkk 个点取的方式没有什么规律的话，会非常难以计算，所以可以猜想这 kkk 个点分布会有什么规律。
-其实不难发现，这 kkk 个点的深度必须相同，证明：
-我们假设 kkk 个点不都在同一层，那么一定 \exist i \in (1,k], d_{b_i}>d_{b_1}，对于 iii 这棵树，它的最小深度为 dbid_{b_i}d​b​i​​​​，那么 db1∉Sid_{b_1} \notin S_id​b​1​​​​∉S​i​​，所以 db1∉⋂i=2k+1Sid_{b_1} \notin \bigcap\limits_{i=2}^{k+1} S_id​b​1​​​​∉​i=2​⋂​k+1​​S​i​​ 即 db1∉S1d_{b_1} \notin S_1d​b​1​​​​∉S​1​​，这显然矛盾了，所以得出结论：kkk 个点必须在同一深度。
-对于每一层的点，我们统计答案。令 mxdepimxdep_imxdep​i​​ 表示 iii 这个结点的子树在原树中的最大深度，枚举 ddd 表示深度为 ddd，令 numsinum...
+              洛谷 P14254 题解思路首先，可以想到如果这 $k$ 个点取的方式没有什么规律的话，会非常难以计算，所以可以猜想这 $k$ 个点分布会有什么规律。
+其实不难发现，这 $k$ 个点的深度必须相同，证明：
+我们假设 $k$ 个点不都在同一层，那么一定 $\exist i \in (1,k], d_{b_i}&gt;d_{b_1}$，对于 $i$ 这棵树，它的最小深度为 $d_{b_i}$，那么 $d_{b_1} \notin S_i$，所以 $d_{b_1} \notin \bigcap\limits_{i&#x3D;2}^{k+1} S_i$ 即 $d_{b_1} \notin S_1$，这显然矛盾了，所以得出结论：$k$ 个点必须在同一深度。
+对于每一层的点，我们统计答案。令 $mxdep_i$ 表示 $i$ 这个结点的子树在原树中的最大深度，枚举 $d$ 表示深度为 $d$，令 $nums_i$ 表示深度为 $d$ 的所有结点中 $mxdep$ 为 $i$ 的点的数量，很显然，我们在选点的时候只需要关注 $mxdep$ 即可，我们选出的 $k$ 个点中，$1$ 号点的 $m...
             
           </div>
         
@@ -610,7 +604,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.2k 词 
+            1.1k 词 
           </div>
         </div>
         
@@ -621,24 +615,20 @@
         
           <div class="truncate-text">
             
-              abc405_a 日语题面阅读
-原题题面
-問題文
-現在 AtCoder で開催されている AtCoder Regular Contest (ARC) には、Div. 111 と Div. 222 の 222 種類が存在します。 ARC Div. 111 では レーティング が 160016001600 以上 299929992999 以下の人が、ARC Div. 222 ではレーティングが 120012001200 以上 239923992399 以下の人がそれぞれ Rated 対象 となります。
-正整数 R,XR, XR,X が与えられます。
-レーティングが RRR の人は ARC Div. XXX において Rated 対象ですか？
+              abc405_a 日语题面阅读原题题面問題文現在 AtCoder で開催されている AtCoder Regular Contest (ARC) には、Div. $1$ と Div. $2$ の $2$ 種類が存在します。 ARC Div. $1$ では レーティング が $1600$ 以上 $2999$ 以下の人が、ARC Div. $2$ ではレーティングが $1200$ 以上 $2399$ 以下の人がそれぞれ Rated 対象 となります。
+正整数 $R, X$ が与えられます。
+レーティングが $R$ の人は ARC Div. $X$ において Rated 対象ですか？
 制約
-
-1≤R≤42291\leq R \leq 42291≤R≤4229
-1≤X≤21\leq X \leq 21≤X≤2
+$1\leq R \leq 4229$
+$1\leq X \leq 2$
 入力は全て整数
 
 
-入力
-入力は以下の形式で標準入力から与えられる。
+入力入力は以下の形式で標準入力から与えられる。
 1$R$ $X$
-出力
-レーティングが RRR の人が ARC Div. XXX において Rated 対象ならば Yes を、そうでないならば No ...
+
+出力レーティングが $R$ の人が ARC Div. $X$ において Rated 対象ならば Yes を、そうでないならば No を出力せよ。
+解读题目描述，在日语中称为“問題文（もんだいぶん）”，其中，“问”字的发音与“質問（しつもん）”...
             
           </div>
         
@@ -699,7 +689,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            790 词 
+            770 词 
           </div>
         </div>
         
@@ -710,13 +700,10 @@
         
           <div class="truncate-text">
             
-              P13872 题解
-思路
-一方拿到了 xxx 这个数字后必定失败，则称 xxx 为该方的必败点，如果必定胜利，则称为必胜点。
-会发现 x=0x=0x=0 或 x=1x=1x=1 时就是必败点，每一次进行操作的时候会减去质数，那么必败点加上一个质数，得到的点就是另一方的必胜点，因为对方可以通过减掉这个质数使该方进入必败状态，所以，设 fif_if​i​​ 表示长度为 iii 时小蓝必胜还是必败，若存在一个质数 p≤ip \le ip≤i 使得 fi−pf_{i-p}f​i−p​​ 为必败，则 fi=1f_i=1f​i​​=1 即必胜，否则必败。
+              P13872 题解思路一方拿到了 $x$ 这个数字后必定失败，则称 $x$ 为该方的必败点，如果必定胜利，则称为必胜点。
+会发现 $x&#x3D;0$ 或 $x&#x3D;1$ 时就是必败点，每一次进行操作的时候会减去质数，那么必败点加上一个质数，得到的点就是另一方的必胜点，因为对方可以通过减掉这个质数使该方进入必败状态，所以，设 $f_i$ 表示长度为 $i$ 时小蓝必胜还是必败，若存在一个质数 $p \le i$ 使得 $f_{i-p}$ 为必败，则 $f_i&#x3D;1$ 即必胜，否则必败。
 筛一遍质数，然后跑一边动态规划即可。
-代码
-1234567891011121314151617181920212223242526272829303132333435363738const int N=100005;int T,n;int pri[N],idx;bool flag[N];bool f[N];void init() &#123;	_rep(i,2,N-1) &#123;		if (!flag[i]) pri[++idx]=i;...
+代码1234567891011121314151617181920212223242526272829303132333435363738const int N=100005;int T,n;int pri[N],idx;bool flag[N];bool f[N];void init() &#123;	_rep(i,2,N-1) &#123;		if (!flag[i]) pri[++idx]=i;		_rep(j,1,idx) &#123;	...
             
           </div>
         
@@ -777,7 +764,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.3k 词 
+            1.2k 词 
           </div>
         </div>
         
@@ -788,13 +775,10 @@
         
           <div class="truncate-text">
             
-              洛谷 P13871 题解
-思路
-动态规划、最小生成树。
-首先利用动态规划来求任意两个串的最长公共子串数量，设 fp,qf_{p,q}f​p,q​​ 表示公共子串结束于串 sis_is​i​​ 的第 ppp 个字符，以及串 sjs_js​j​​ 的第 qqq 个字符，那么可以写出转移方程如下：fp,q=[si,p=sj,q]×(fp−1,q−1+1)f_{p,q} = [s_{i,p}=s_{j,q}] \times (f_{p-1,q-1}+1)f​p,q​​=[s​i,p​​=s​j,q​​]×(f​p−1,q−1​​+1)，然后 resresres 取 fff 中所有数的 max\maxmax，由于串可以滚动，所以复制一份接在后面，求得的 resresres 和 mmm 取个 min\minmin 即可。
-于是我们构造出了不到 4×1044 \times 10^44×10​4​​ 条边，然后对这些边的边权排个序，做 Kruskal 即可。
-代码
-123456789101112131415161718192021222324252627282930313233343536373...
+              洛谷 P13871 题解思路动态规划、最小生成树。
+首先利用动态规划来求任意两个串的最长公共子串数量，设 $f_{p,q}$ 表示公共子串结束于串 $s_i$ 的第 $p$ 个字符，以及串 $s_j$ 的第 $q$ 个字符，那么可以写出转移方程如下：$f_{p,q} &#x3D; [s_{i,p}&#x3D;s_{j,q}] \times (f_{p-1,q-1}+1)$，然后 $res$ 取 $f$ 中所有数的 $\max$，由于串可以滚动，所以复制一份接在后面，求得的 $res$ 和 $m$ 取个 $\min$ 即可。
+于是我们构造出了不到 $4 \times 10^4$ 条边，然后对这些边的边权排个序，做 Kruskal 即可。
+代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546const int N=205;const int M=105;const int K=39805;int n,m,idx;char s[N][M];int f[M][M];int...
             
           </div>
         
@@ -855,7 +839,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            3.1k 词 
+            2.5k 词 
           </div>
         </div>
         
@@ -866,9 +850,8 @@
         
           <div class="truncate-text">
             
-              洛谷 P13777 题解
-思路
-先忽略掉本质不同这一较为特殊的定义，对于 n&gt;1n&gt;1n&gt;1，我们直接枚举 A1,AnA_1,A_nA​1​​,A​n​​，于是问题转化成了为 n−2n-2n−2 个数字赋予一个 [0,2][0,2][0,2] 的数字，使得这 n−2n-2n−2 个数字的和为 k−A1−Ank-A_1-A_nk−A​1​​−A​n​​，我们定义 f(len,k)f(len,k)f(len,k) 表示 lenlenlen 个 [0,2][0,2][0,2] 的数字之和为 kkk 的方案数，那么上面我们要求的就是 ∑A1=03∑An=03[(n−2)×2≥k−A1−An∧k−A1−An≥0]f(n−2,k−A1−An)\sum\limits_{A_1=0}^{3} \sum\limits_{A_n=0}^{3} [(n-2) \times 2 \ge k-A_1-A_n \wedge k-A_1-A_n \ge 0] f(n-2,k-A_1-A_n)​A​1​​=0​∑​3​​​A​n​​=0​∑​3​​[(n−2)×2≥k−A​1​​−A​n​​∧...
+              洛谷 P13777 题解思路先忽略掉本质不同这一较为特殊的定义，对于 $n&gt;1$，我们直接枚举 $A_1,A_n$，于是问题转化成了为 $n-2$ 个数字赋予一个 $[0,2]$ 的数字，使得这 $n-2$ 个数字的和为 $k-A_1-A_n$，我们定义 $f(len,k)$ 表示 $len$ 个 $[0,2]$ 的数字之和为 $k$ 的方案数，那么上面我们要求的就是 $\sum\limits_{A_1&#x3D;0}^{3} \sum\limits_{A_n&#x3D;0}^{3} [(n-2) \times 2 \ge k-A_1-A_n \wedge k-A_1-A_n \ge 0] f(n-2,k-A_1-A_n)$
+然后现在考虑本质不同怎么做，在本题中，相同以及逆序后相同均算作本质相同，所以在上文计数中对称的答案我们计算了一次，其余答案计算了两次，那么我们可以把对称的部分答案再加一次，最后除以二。具体地，如果 $k$ 是偶数，那么 $n$ 必定也为偶数才会出现对称的情况，那么枚举 $A_1&#x3D;A_n$，答案就是 $f(\frac{n}{2}-1,\frac...
             
           </div>
         
@@ -929,7 +912,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            5.1k 词 
+            4.3k 词 
           </div>
         </div>
         
@@ -940,11 +923,9 @@
         
           <div class="truncate-text">
             
-              2025 JZ Summer Camp
-可能更好的阅读体验
-8.18
-早上来了安排机位，忙活了一会儿，没时间打比赛了，就把比赛留到下午来打。
-没事先开道题目来写，P3227\text{P3227}P3227，一道挺不错的网络流图论建模题，感觉有必要记录一下。题意是这样的，给定了一个长方体，对于每一个 (x,y)(x,y)(x,y)，我们能且仅能找到一个点 (x,y,z)(x,y,z)(x,y,z)，然后将 v(x,y,z)v(x,y,z)v(x,y,z) 加入答案，并且 (x,y)(x,y)(x,y) 四连通方向选的点的 zzz 不能与它差 DDD 以上。很明显可以用最小割来做掉这道题，现在考虑如何建图，最小割的题目的建模突破口就是各个限制，第一个限制就是每一个 (x,y)(x,y)(x,y) 能且仅能选一个 zzz，那不妨对于每一个 (x,y)(x,y)(x,y) 都连一条链，形如 S→(x,y,1)→(x,y,2)→⋯(x,y,zmax)→(x,y,zmax+1)→TS \rightarrow (x,y,1) \rightarrow (x,y,2) \rightarrow \...
+              2025 JZ Summer Camp可能更好的阅读体验
+8.18早上来了安排机位，忙活了一会儿，没时间打比赛了，就把比赛留到下午来打。
+没事先开道题目来写，$\text{P3227}$，一道挺不错的网络流图论建模题，感觉有必要记录一下。题意是这样的，给定了一个长方体，对于每一个 $(x,y)$，我们能且仅能找到一个点 $(x,y,z)$，然后将 $v(x,y,z)$ 加入答案，并且 $(x,y)$ 四连通方向选的点的 $z$ 不能与它差 $D$ 以上。很明显可以用最小割来做掉这道题，现在考虑如何建图，最小割的题目的建模突破口就是各个限制，第一个限制就是每一个 $(x,y)$ 能且仅能选一个 $z$，那不妨对于每一个 $(x,y)$ 都连一条链，形如 $S \rightarrow (x,y,1) \rightarrow (x,y,2) \rightarrow \cdots(x,y,z_{\max}) \rightarrow (x,y,z_{\max}+1) \rightarrow T$，边权分别为 $\infty,v(x,y,1),v(x,y,2),\cdots,v(x,y,z_...
             
           </div>
         
@@ -1005,7 +986,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            2.3k 词 
+            2.1k 词 
           </div>
         </div>
         
@@ -1016,11 +997,10 @@
         
           <div class="truncate-text">
             
-              洛谷 P13271 [NOI2025] 机器人 题解
-一道比较不错的分层图题目，记录一下。
-思路
-对于一个点 iii，假设它的出度为 outdegioutdeg_ioutdeg​i​​，那么建立 outdegi+1outdeg_i + 1outdeg​i​​+1 个点，对于一条边，如果这条边是 iii 的第 jjj 条边，那么 iii 的第 jjj 个点连到终点 destdestdest 的第 jjj 个点，如果这个点不存在，那么就连接到 jjj 的第 outdegdestoutdeg_{dest}outdeg​dest​​ 个点同时加上 ppp 下降的这部分值，用前缀和求出 www 的一段的和，同时 iii 的第 jjj 个点向 destdestdest 的第 outdegdest+1outdeg_{dest}+1outdeg​dest​​+1 个点连边。对于一个点的前 outdegdestoutdeg_{dest}outdeg​dest​​ 个点，相邻两点按照 v,wv,wv,w 连边。
-点的编号可以按照如下方式排列，(1,1),(1,2),⋯,(1,outdeg1+1),(...
+              洛谷 P13271 [NOI2025] 机器人 题解一道比较不错的分层图题目，记录一下。
+思路对于一个点 $i$，假设它的出度为 $outdeg_i$，那么建立 $outdeg_i + 1$ 个点，对于一条边，如果这条边是 $i$ 的第 $j$ 条边，那么 $i$ 的第 $j$ 个点连到终点 $dest$ 的第 $j$ 个点，如果这个点不存在，那么就连接到 $j$ 的第 $outdeg_{dest}$ 个点同时加上 $p$ 下降的这部分值，用前缀和求出 $w$ 的一段的和，同时 $i$ 的第 $j$ 个点向 $dest$ 的第 $outdeg_{dest}+1$ 个点连边。对于一个点的前 $outdeg_{dest}$ 个点，相邻两点按照 $v,w$ 连边。
+点的编号可以按照如下方式排列，$(1,1),(1,2),\cdots,(1,outdeg_{1}+1),(2,1),\cdots,(n,outdeg_{n}+1)$，从 $(1,1)$ 开始跑 dijkstra，对于每个点，在它附属的下面的点里面找到最小的一个输出即可。
+代码1234567891011121314151617...
             
           </div>
         
@@ -1069,7 +1049,7 @@
   
   <div id="footer-info" class="inner">
     
-    &copy; 2025 Lele<br>
+    &copy; 2026 Lele<br>
     Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
   </div>
 </footer>
