@@ -173,12 +173,12 @@
         
             <a class="category-link" href="/categories/OI/">
                 OI
-                <div class="category-count">32</div>
+                <div class="category-count">33</div>
             </a>
         <div class="children"><div class="category-box">
             <a class="category-link" href="/categories/OI/%E9%A2%98%E8%A7%A3/">
                 题解
-                <div class="category-count">32</div>
+                <div class="category-count">33</div>
             </a>
         <div class="children"><div class="category-box">
             <a class="category-link" href="/categories/OI/%E9%A2%98%E8%A7%A3/AtCoder/">
@@ -216,6 +216,11 @@
     <div class="widget">
       <h3 class="widget-title">归档</h3>
       
+      
+        <a class="archive-link" href="/archives/2026/10 ">
+          十月 2026 
+          <div class="archive-count">1 </div>
+        </a>
       
         <a class="archive-link" href="/archives/2026/08 ">
           八月 2026 
@@ -263,6 +268,12 @@
       <h3 class="widget-title">最新文章</h3>
       <ul>
         
+          <a class="recent-link" href="/2026/10/31/csps-2026-t3-solution/" title="CSP-S 2026 T3 题解" >
+            <div class="recent-link-text">
+              CSP-S 2026 T3 题解
+            </div>
+          </a>
+        
           <a class="recent-link" href="/2026/08/11/luogu-p16508-solution/" title="题解：P16508 [GKS 2015 #B] gNumbers" >
             <div class="recent-link-text">
               题解：P16508 [GKS 2015 #B] gNumbers
@@ -293,12 +304,6 @@
             </div>
           </a>
         
-          <a class="recent-link" href="/2026/08/10/cf-2253d-solution/" title="题解：CF2253D Hypercarp and Interdimensional Jumps" >
-            <div class="recent-link-text">
-              题解：CF2253D Hypercarp and Interdimensional Jumps
-            </div>
-          </a>
-        
       </ul>
     </div>
   </div>
@@ -309,6 +314,83 @@
     </div>
     <div id="content-body">
       
+   
+
+
+<article id="post-cf-2254c2-solution" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2026/08/08/cf-2254c2-solution/">题解：CF2254C2 Marenol (hard version)</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2026-08-08T05:04:58.000Z" itemprop="datePublished">2026-08-08</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/OI/">OI</a>><a class="meta-cate-link" href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>><a class="meta-cate-link" href="/categories/OI/%E9%A2%98%E8%A7%A3/Codeforces/">Codeforces</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            362 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OI/" rel="tag">OI</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              CF2254C2 题解思路操作等价于选择一个位置 $i$ 然后交换 $i,i+2$。
+那么对于奇偶下标分开处理即可。
+比如对于奇数下标，$A&#x3D;a_1,a_3,a_5,\cdots, B&#x3D;b_1,b_3,b_5,\cdots$，分别找出所有值为 $0$ 的下标，下标升序排序分别记为 $P,Q$。
+$|P|&#x3D;|Q|$ 有解，答案就是 $\sum\limits_{i&#x3D;1}^{|P|} |P_i-Q_i|$，也就是把 $P$ 的每一个位置通过 $+1,-1$ 移动到和 $Q$ 相同所需的代价。
+举个例子：$A&#x3D;[0,1,1,0,0,1],B&#x3D;[1,0,0,1,1,0]$，那么有 $P&#x3D;[1,4,5],Q&#x3D;[2,3,6]$，那么答案就是 $|1-2|+|4-3|+|5-6| &#x3D; 3$。
+
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2026/08/08/cf-2254c2-solution/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
    
 
 
@@ -994,95 +1076,6 @@ dijkstra 跑一下，这道题就做完了。
 
 
 
-   
-
-
-<article id="post-luogu-p15801-solution" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2026/03/16/luogu-p15801-solution/">题解：洛谷 P15801 [GESP202603 六级] 完全二叉树</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2026-03-16T12:05:38.000Z" itemprop="datePublished">2026-03-16</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/OI/">OI</a>><a class="meta-cate-link" href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>><a class="meta-cate-link" href="/categories/OI/%E9%A2%98%E8%A7%A3/%E6%B4%9B%E8%B0%B7/">洛谷</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            1.5k 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GESP/" rel="tag">GESP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OI/" rel="tag">OI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA/" rel="tag">分类讨论</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-              P15801 题解思路记 $mxdep_u$ 为点 $u$ 为子树的最大深度，$dep_u$ 表示点 $u$ 深度，$flag_u$ 表示是否为完全二叉树，$full_u$ 表示是否为满二叉树。
-对每个点分类讨论。
-
-如果没有左右儿子，则 $full_u&#x3D;1,flag_u&#x3D;1$。
-如果只有右儿子，则 $full_u&#x3D;0,flag_u&#x3D;0$。
-如果只有左儿子，则 $full_u&#x3D;0$，如果 $full_{l_u}$ 且 $mxdep_{l_u}&#x3D;dep_u+1$ 则 $flag_u&#x3D;1$ 否则为 $0$。
-如果左右儿子都有：
-
-如果两者子树的最大深度都相等：
-
-如果左右都满，则 $full_u&#x3D;1,flag_u&#x3D;1$。
-如果左满右完全，则 $full_u&#x3D;0,flag_u&#x3D;1$。
-否则 $full_u&#x3D;0,flag_u&#x3D;0$。
-
-
-如果左子树的最大深度比右子树的最大深度大 $1$：
-
-如果左右都满，则 $full_u&#x3D;0,flag_u&#x3D...
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2026/03/16/luogu-p15801-solution/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-
 
   <nav id="page-nav">
     <!-- 在第二页时 page.prev_link 不知为何无法返回正确的链接 -->
@@ -1135,20 +1128,5 @@ dijkstra 跑一下，这道题就做完了。
 
   </div>
   <script src="/js/light-dark-switch.js"></script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
