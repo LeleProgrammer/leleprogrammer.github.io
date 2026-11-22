@@ -1,37 +1,37 @@
 {
-  "siteName": "LeleBlog",
-  "siteDescription": "",
+  "siteName": "Lele",
+  "siteDescription": "Lele 个人博客",
   "author": "Lele",
   "email": "",
-  "github": "",
-  "siteUrl": "",
+  "github": "LeleProgrammer",
+  "siteUrl": "https://leleprogrammer.github.io/",
   "basePath": "",
   "language": "zh-CN",
   "defaultTheme": "dark",
   "startYear": 2025,
   "postsPerPage": 8,
-  "footerNote": "",
+  "footerNote": "Made by Lele with ❤",
   "icp": "",
   "backgroundImage": "/assets/images/bg.jpg",
   "avatar": "/assets/images/avatar.jpg",
-  "backgroundBrightness": 0.7,
+  "backgroundBrightness": 0.4,
   "profileButtons": [
     {
       "type": "github",
       "label": "GitHub",
-      "url": "",
+      "url": "https://github.com/LeleProgrammer",
       "visible": true
     },
     {
       "type": "gamepad",
       "label": "游戏站",
-      "url": "",
+      "url": "https://gamehub.leleprogrammer.chatgpt.site",
       "visible": false
     },
     {
       "type": "luogu",
       "label": "洛谷",
-      "url": "",
+      "url": "https://www.luogu.com.cn/user/961972",
       "visible": true
     },
     {
