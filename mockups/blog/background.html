@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{width:1920px;height:1080px;overflow:hidden;background:#07080d}
+  .stage{position:relative;width:100%;height:100%;overflow:hidden;background:
+    radial-gradient(1100px 700px at 8% -12%, rgba(111,111,245,.55), transparent 60%),
+    radial-gradient(900px 620px at 96% -6%, rgba(255,122,184,.30), transparent 62%),
+    radial-gradient(900px 700px at 60% 118%, rgba(88,120,255,.22), transparent 65%),
+    #07080d;}
+  .grid{position:absolute;inset:0;background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:96px 96px;mask-image:linear-gradient(180deg,rgba(0,0,0,.9),transparent 85%)}
+  .ring{position:absolute;border:1px solid rgba(255,255,255,.12);border-radius:50%}
+  .r1{width:820px;height:820px;right:-180px;top:-260px}
+  .r2{width:560px;height:560px;right:-50px;top:-130px}
+  .r3{width:1100px;height:1100px;left:-420px;bottom:-620px;border-color:rgba(255,255,255,.08)}
+  .orb{position:absolute;border-radius:50%;filter:blur(2px)}
+  .o1{width:420px;height:420px;right:150px;top:170px;background:radial-gradient(circle at 35% 35%,rgba(167,139,250,.55),rgba(111,111,245,.18) 55%,transparent 70%);filter:blur(6px)}
+  .o2{width:260px;height:260px;left:220px;bottom:170px;background:radial-gradient(circle at 40% 40%,rgba(255,122,184,.35),transparent 68%);filter:blur(8px)}
+  .beam{position:absolute;left:50%;top:-30%;width:1px;height:160%;background:linear-gradient(180deg,transparent,rgba(255,255,255,.18),transparent);transform:rotate(24deg)}
+  .noise{position:absolute;inset:0;opacity:.35;background-image:radial-gradient(rgba(255,255,255,.16) 1px,transparent 1px);background-size:5px 5px;mask-image:radial-gradient(circle at 50% 40%,rgba(0,0,0,.5),transparent 70%)}
+</style></head><body><div class="stage">
+  <div class="grid"></div>
+  <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="beam"></div>
+  <div class="noise"></div>
+</div></body></html>

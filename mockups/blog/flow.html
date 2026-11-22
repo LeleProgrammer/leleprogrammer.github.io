@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { width: 1200px; height: 600px; overflow: hidden; background: #08090f; color: #eef0f7; font-family: "Segoe UI", "Microsoft YaHei", sans-serif; }
+  .stage { position: relative; width: 100%; height: 100%; padding: 54px 64px; background:
+    radial-gradient(700px 380px at 12% -10%, rgba(111,111,245,.20), transparent 60%),
+    radial-gradient(600px 340px at 92% 0%, rgba(255,122,184,.12), transparent 60%), #08090f; }
+  .head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 34px; }
+  .title { font-size: 26px; font-weight: 700; letter-spacing: -.02em; }
+  .title span { color: #8b8bff; }
+  .hint { color: #6f768c; font-family: "Cascadia Code", Consolas, monospace; font-size: 12px; letter-spacing: .16em; }
+  .row { display: flex; align-items: stretch; gap: 20px; }
+  .node { flex: 1; border: 1px solid rgba(255,255,255,.10); border-radius: 18px; background: rgba(17,19,28,.9); padding: 24px 24px 20px; position: relative; overflow: hidden; }
+  .node::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg,#6f6ff5,#ff7ab8); opacity: .85; }
+  .node .k { color: #8b8bff; font-family: "Cascadia Code", Consolas, monospace; font-size: 12px; letter-spacing: .14em; }
+  .node h2 { margin: 12px 0 8px; font-family: "Cascadia Code", Consolas, monospace; font-size: 22px; font-weight: 600; letter-spacing: -.01em; }
+  .node p { margin: 0; color: #8d93a5; font-size: 13px; line-height: 1.7; }
+  .node ul { margin: 14px 0 0; padding: 0; list-style: none; color: #c3c7d6; font-family: "Cascadia Code", Consolas, monospace; font-size: 12.5px; line-height: 1.9; }
+  .node li::before { content: "→ "; color: #ff7ab8; }
+  .arrow { align-self: center; color: #5d6478; font-size: 26px; }
+  .foot { display: flex; justify-content: space-between; margin-top: 30px; color: #596078; font-family: "Cascadia Code", Consolas, monospace; font-size: 12px; letter-spacing: .1em; }
+  .foot b { color: #8b8bff; font-weight: 500; }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="head">
+      <div class="title">构建流程 <span>/ build pipeline</span></div>
+      <div class="hint">STATIC · NO FRAMEWORK</div>
+    </div>
+    <div class="row">
+      <div class="node">
+        <div class="k">01 / INPUT</div>
+        <h2>content/</h2>
+        <p>文章与图片放在一起，按文件夹组织。</p>
+        <ul><li>posts/&lt;slug&gt;/index.md</li><li>posts/&lt;slug&gt;/images/</li><li>pages/about.md</li></ul>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="k">02 / BUILD</div>
+        <h2>build.mjs</h2>
+        <p>Node 脚本读取 Markdown，套用模板并生成页面。</p>
+        <ul><li>markdown-it + highlight.js</li><li>KaTeX 数学公式</li><li>RSS / 搜索索引</li></ul>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="k">03 / OUTPUT</div>
+        <h2>dist/</h2>
+        <p>纯静态文件，直接托管到 GitHub Pages。</p>
+        <ul><li>index.html · posts/</li><li>tags/ · archive/</li><li>rss.xml · sitemap.xml</li></ul>
+      </div>
+    </div>
+    <div class="foot"><span>source <b>content/</b></span><span>npm run build</span><span>deploy <b>gh-pages</b></span></div>
+  </div>
+</body>
+</html>

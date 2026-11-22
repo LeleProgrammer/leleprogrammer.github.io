@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>方案 D · 终端极客</title>
+<style>
+  :root{--bg:#080b10;--panel:#0d1117;--line:#232a36;--ink:#e6edf3;--muted:#7d8590;--green:#7ee787;--amber:#e3b341;--blue:#79c0ff;--purple:#d2a8ff;}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:"Cascadia Code","JetBrains Mono",Consolas,"Sarasa Mono SC","Microsoft YaHei",monospace;-webkit-font-smoothing:antialiased}
+  .frame{width:1440px;height:900px;overflow:hidden;position:relative;background:
+     radial-gradient(1200px 600px at 75% -10%,rgba(121,192,255,.08),transparent 60%),
+     radial-gradient(900px 500px at 10% 110%,rgba(126,231,135,.06),transparent 60%),var(--bg)}
+  .frame::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
+  .frame + .frame{border-top:1px solid #1a2029}
+  .win{width:1180px;margin:64px auto 0;border:1px solid var(--line);border-radius:10px;background:rgba(13,17,23,.86);box-shadow:0 40px 120px -40px rgba(0,0,0,.9);overflow:hidden;position:relative}
+  .bar{height:40px;display:flex;align-items:center;padding:0 16px;border-bottom:1px solid var(--line);background:#0f141b;gap:8px}
+  .lights{display:flex;gap:7px;margin-right:14px}
+  .lights i{width:11px;height:11px;border-radius:50%;display:block}
+  .lights i:nth-child(1){background:#ff5f57}.lights i:nth-child(2){background:#febc2e}.lights i:nth-child(3){background:#28c840}
+  .bar .p{font-size:12px;color:var(--muted);letter-spacing:.04em}
+  .bar .p b{color:var(--ink);font-weight:400}
+  .bar .right{margin-left:auto;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .body{padding:40px 42px 0}
+  .line{font-size:13px;line-height:2.05;color:#aab4c0;letter-spacing:.01em}
+  .prompt{color:var(--green)}
+  .cmd{color:var(--ink)}
+  .out{color:#c9d4e0}
+  .comment{color:#5c6773}
+  .name{font-size:32px;font-weight:700;letter-spacing:-.02em;line-height:1.3;margin:12px 0 6px;color:#fff}
+  .name .caret{display:inline-block;width:11px;height:26px;background:var(--green);vertical-align:-3px;margin-left:4px}
+  .tagline{font-size:13.5px;color:var(--muted);margin-bottom:26px;letter-spacing:.02em}
+  .grid{display:grid;grid-template-columns:1fr 300px;gap:40px}
+  .post{display:grid;grid-template-columns:118px 1fr;gap:14px;padding:12px 0;border-bottom:1px dashed #1c2330;font-size:13.5px;align-items:baseline}
+  .post .d{color:var(--amber);font-size:12px}
+  .post .t{color:var(--ink)}
+  .post .t:hover{color:var(--green)}
+  .post .tags{color:var(--purple);font-size:11.5px;margin-left:10px;float:right}
+  .panel{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#0b0f15}
+  .panel h4{font-size:11px;letter-spacing:.18em;color:var(--muted);margin:0 0 12px}
+  .panel .row{display:flex;justify-content:space-between;font-size:12px;line-height:2.05;color:#9aa6b2}
+  .panel .row b{color:var(--green);font-weight:400}
+  .panel .tag{display:inline-block;font-size:11px;color:var(--blue);border:1px solid #1f2c3a;border-radius:4px;padding:2px 8px;margin:0 4px 6px 0}
+  .panel .div{border-top:1px solid var(--line);margin:12px 0}
+  .status{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);margin-top:14px}
+  .status .dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+  .foot{display:flex;justify-content:space-between;font-size:11px;color:#4f5a66;padding:18px 42px;letter-spacing:.08em}
+  .foot a{color:#5c6773;text-decoration:none;margin-left:18px}
+  .cursor{display:inline-block;width:8px;height:15px;background:var(--green);vertical-align:-2px;animation:bl 1s steps(1) infinite}
+  @keyframes bl{50%{opacity:0}}
+  /* article */
+  .article{display:grid;grid-template-columns:150px 1fr;gap:34px;padding:30px 42px 0}
+  .toc{font-size:11.5px;color:#6b7686;line-height:2.2;border-left:1px solid #1c2330;padding-left:14px}
+  .toc b{color:var(--green);font-weight:400;display:block;font-size:10px;letter-spacing:.16em;margin-bottom:10px}
+  .toc .on{color:var(--ink)}
+  .md h1{font-size:30px;line-height:1.35;margin:0 0 6px;color:#fff;letter-spacing:-.01em}
+  .md .meta{font-size:11.5px;color:#6b7686;margin-bottom:22px}
+  .md .meta i{font-style:normal;color:var(--purple)}
+  .md p{font-size:13.5px;line-height:2;color:#c2ccd8;margin:0 0 14px;max-width:700px}
+  .md h2{font-size:14px;color:var(--green);margin:22px 0 10px;font-weight:600;letter-spacing:.02em}
+  .md h2::before{content:"## ";color:#3d4753}
+  .md pre{background:#0a0e14;border:1px solid #1c2330;border-radius:6px;padding:14px 18px;font-size:12px;line-height:1.9;color:#c9d4e0;margin:0 0 14px;max-width:700px}
+  .md pre .c{color:#5c6773}.md pre .k{color:#ff7b72}.md pre .s{color:#a5d6ff}
+  .md a{color:var(--blue);text-decoration:none;border-bottom:1px dashed #2a3a4a}
+  .badge{position:absolute;right:24px;bottom:14px;font-size:10px;letter-spacing:.18em;color:#3d4753}
+</style>
+</head>
+<body>
+
+<section class="frame">
+  <div class="win">
+    <div class="bar"><div class="lights"><i></i><i></i><i></i></div><div class="p"><b>lele@blog</b>: ~/blog — zsh</div><div class="right">80×24 · UTF-8</div></div>
+    <div class="body">
+      <div class="line"><span class="prompt">lele@blog</span> <span class="comment">~</span> <span class="prompt">%</span> <span class="cmd">whoami</span></div>
+      <div class="name">Lele<span class="caret"></span></div>
+      <div class="tagline">developer / writer / 在代码与生活之间来回切换</div>
+
+      <div class="line"><span class="prompt">lele@blog</span> <span class="comment">~</span> <span class="prompt">%</span> <span class="cmd">ls -t posts/</span></div>
+
+      <div class="grid">
+        <div>
+          <div class="post"><span class="d">2026-11-18</span><span class="t">static-blog-generator.md<span class="tags">#node #build</span></span></div>
+          <div class="post"><span class="d">2026-11-09</span><span class="t">windows-dev-setup-2026.md<span class="tags">#tools</span></span></div>
+          <div class="post"><span class="d">2026-10-27</span><span class="t">why-i-still-blog.md<span class="tags">#essay</span></span></div>
+          <div class="post"><span class="d">2026-10-12</span><span class="t">full-text-search-static-site.md<span class="tags">#frontend</span></span></div>
+          <div class="post"><span class="d">2026-09-28</span><span class="t">weekend-ride-40km.md<span class="tags">#life</span></span></div>
+          <div class="line" style="border:none;padding-top:16px"><span class="prompt">lele@blog</span> <span class="comment">~</span> <span class="prompt">%</span> <span class="cmd">cat about.md</span></div>
+          <div class="line" style="color:#8b97a5;font-size:12.5px;line-height:1.95;max-width:560px">白天写代码，晚上写点字。相信长期主义，也相信把一件小事做好本身就很有意义。</div>
+          <div class="line" style="padding-top:16px"><span class="prompt">lele@blog</span> <span class="comment">~</span> <span class="prompt">%</span> <span class="cmd">cat now.md</span></div>
+          <div class="line" style="color:#8b97a5;font-size:12.5px;line-height:1.95;max-width:560px"><span style="color:#e3b341">reading //</span> 《置身事内》<br><span style="color:#e3b341">building //</span> 这个博客的第 5 次改版<br><span style="color:#e3b341">listening //</span> 坂本龙一 · async</div>
+          <div class="line" style="padding-top:14px"><span class="prompt">lele@blog</span> <span class="comment">~</span> <span class="prompt">%</span> <span class="cursor"></span></div>
+        </div>
+
+        <aside class="panel">
+          <h4>/// PROFILE</h4>
+          <div class="row"><span>文章</span><b>24</b></div>
+          <div class="row"><span>标签</span><b>8</b></div>
+          <div class="row"><span>写作</span><b>3 yrs</b></div>
+          <div class="div"></div>
+          <h4>/// TAGS</h4>
+          <div><span class="tag">#node</span><span class="tag">#frontend</span><span class="tag">#tools</span><span class="tag">#life</span><span class="tag">#essay</span><span class="tag">#design</span></div>
+          <div class="div"></div>
+          <h4>/// FEED</h4>
+          <div class="row"><span>rss.xml</span><b>online</b></div>
+          <div class="row"><span>github</span><b>@lele</b></div>
+          <div class="status"><span class="dot"></span>最后构建 2026-11-20 14:02</div>
+        </aside>
+      </div>
+      <div class="foot"><span>© 2026 LELE — built with node.js</span><span><a href="#">~/rss</a><a href="#">~/github</a><a href="#">~/mail</a></span></div>
+    </div>
+  </div>
+  <div class="badge">方案 D · 终端极客</div>
+</section>
+
+<section class="frame">
+  <div class="win">
+    <div class="bar"><div class="lights"><i></i><i></i><i></i></div><div class="p"><b>lele@blog</b>: ~/blog — zsh</div><div class="right">cat posts/static-blog-generator.md</div></div>
+    <div class="article">
+      <div class="toc"><b>// OUTLINE</b><span class="on">01 目录结构</span><br>02 模板设计<br>03 构建流程<br>04 部署<br><br><b>// META</b>2026-11-18<br>9 min read<br>1,842 words</div>
+      <div class="md">
+        <h1>用 Node.js 从零写一个静态博客生成器</h1>
+        <div class="meta">2026-11-18 · <i>#node</i> <i>#build</i> · 9 min read</div>
+        <p>做这个博客之前，我试过几乎所有现成的方案：WordPress 太重，Hexo 的插件生态让人眼花，Next.js 对我这点内容来说又过于庞大。最后我决定，干脆自己写一个。</p>
+        <p>需求其实很小：读 Markdown、套模板、生成 HTML。真正的难点不在代码，而在于想清楚哪些东西该交给工具，哪些应该留给自己。</p>
+        <h2>先从目录结构开始</h2>
+        <p>一个够用的生成器，最终只留下三个目录：文章、模板和唯一的构建入口。</p>
+        <pre><span class="c">// scripts/build.js</span>
+<span class="k">const</span> posts = <span class="k">await</span> loadPosts(<span class="s">'content'</span>)
+<span class="k">for</span> (<span class="k">const</span> post <span class="k">of</span> posts) {
+  <span class="k">await</span> render(post, <span class="s">'templates/post.html'</span>)
+}
+console.log(<span class="s">'done.'</span>)</pre>
+        <h2>模板要足够笨</h2>
+        <p>模板只负责把数据填进占位符，不做任何逻辑判断。复杂的事情留给构建脚本，改版时才不至于牵一发动全身。</p>
+        <p style="border-left:2px solid #2a3a4a;padding-left:14px;color:#8b97a5">好的工具应该让你忘记它的存在，而不是让你一直围着它转。</p>
+        <h2>构建与部署</h2>
+        <p>生成结果只有纯静态文件，推送到 GitHub 仓库，由 Actions 自动发布到 Pages。没有服务器，没有数据库，也就没有需要维护的东西。</p>
+      </div>
+    </div>
+  </div>
+  <div class="badge">方案 D · 文章页</div>
+</section>
+
+</body>
+</html>

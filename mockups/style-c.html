@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>方案 C · 杂志编辑</title>
+<style>
+  :root{--paper:#fdfcf8;--ink:#101010;--muted:#6d6a63;--line:#171717;--soft:#e6e3da;--accent:#e0361f;}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;-webkit-font-smoothing:antialiased}
+  .serif{font-family:Georgia,"Songti SC","Noto Serif SC","Times New Roman",SimSun,serif}
+  .shell{width:1240px;margin:0 auto}
+  .frame{width:1440px;height:900px;overflow:hidden;position:relative;background:var(--paper)}
+  .frame + .frame{border-top:1px solid #c9c5b8}
+  header{padding-top:30px}
+  .topline{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--line);padding-bottom:14px}
+  .mast{font-size:64px;font-weight:800;letter-spacing:-.045em;line-height:.9;font-family:Georgia,"Times New Roman",serif}
+  .mast span{color:var(--accent)}
+  .meta{text-align:right;font-size:11px;letter-spacing:.2em;color:var(--muted);line-height:1.9}
+  .meta b{display:block;color:var(--ink);font-size:12px;letter-spacing:.14em}
+  nav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);height:44px;font-size:12.5px;letter-spacing:.12em}
+  nav .links{display:flex;gap:30px}
+  nav a{color:inherit;text-decoration:none}
+  nav a.on{color:var(--accent);font-weight:700}
+  nav .find{color:var(--muted);letter-spacing:.08em}
+  .hero{display:grid;grid-template-columns:1fr 400px;gap:46px;padding:30px 0 0}
+  .cat{display:inline-block;background:var(--accent);color:#fff;font-size:10.5px;letter-spacing:.2em;padding:5px 11px;margin-bottom:16px}
+  .lead h1{font-family:Georgia,"Songti SC","Noto Serif SC",serif;font-size:50px;line-height:1.24;letter-spacing:-.015em;margin:0 0 18px;font-weight:700}
+  .lead .deck{font-size:15.5px;line-height:1.8;color:#45423c;max-width:620px;margin:0 0 18px}
+  .byline{font-size:11px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;display:flex;gap:18px;border-top:1px solid var(--soft);padding-top:12px;width:620px}
+  .art{margin-top:18px;height:196px;position:relative;overflow:hidden;background:#f1ede2;border:1px solid var(--soft)}
+  .art::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,#171717 0 2px,transparent 2px 26px);opacity:.10}
+  .art::after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:var(--accent);right:-60px;bottom:-150px;opacity:.92}
+  .art .cap{position:absolute;left:20px;bottom:16px;font-size:10.5px;letter-spacing:.2em;color:#4a463d;text-transform:uppercase}
+  .art .sq{position:absolute;width:120px;height:120px;background:#101010;left:46%;top:38px;transform:rotate(12deg)}
+  .art .sq2{position:absolute;width:64px;height:64px;background:var(--paper);border:1px solid #101010;left:56%;top:70px;transform:rotate(-6deg)}
+  aside .head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--line);padding-bottom:9px;margin-bottom:2px}
+  aside .head h3{font-size:12px;letter-spacing:.24em;margin:0}
+  aside .head span{font-size:10.5px;color:var(--muted)}
+  .item{display:grid;grid-template-columns:38px 1fr;gap:12px;padding:15px 0;border-bottom:1px solid var(--soft)}
+  .item .no{font-family:Georgia,serif;font-size:26px;color:#c9c4b6;line-height:1;font-style:italic}
+  .item h4{font-size:16px;line-height:1.5;margin:0 0 6px;font-weight:600}
+  .item p{font-size:11.5px;color:var(--muted);margin:0}
+  .item .tag{font-size:10px;letter-spacing:.16em;color:var(--accent);margin-top:6px;display:block}
+  .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:26px;border-top:3px solid var(--line);padding-top:18px}
+  .col h5{font-size:10.5px;letter-spacing:.22em;margin:0 0 12px;color:var(--accent)}
+  .col a{display:block;text-decoration:none;color:var(--ink);font-size:14.5px;line-height:1.55;padding:7px 0;border-bottom:1px solid var(--soft)}
+  .col a small{display:block;font-size:10.5px;color:var(--muted);letter-spacing:.06em;margin-top:3px}
+  .foot{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);letter-spacing:.1em;margin-top:20px}
+  /* article */
+  .art-head{padding-top:34px;border-bottom:3px solid var(--line);padding-bottom:16px;display:flex;justify-content:space-between;align-items:flex-end}
+  .art-head .mast{font-size:36px}
+  .art-head .meta{font-size:10.5px}
+  .post{display:grid;grid-template-columns:190px 1fr;gap:50px;padding-top:34px}
+  .post .side{font-size:10.5px;letter-spacing:.14em;color:var(--muted);line-height:2.2;border-top:2px solid var(--line);padding-top:12px}
+  .post .side b{color:var(--ink);display:block;letter-spacing:.1em;margin-bottom:2px}
+  .post .side .share{margin-top:26px;border-top:1px solid var(--soft);padding-top:12px}
+  .post .body .cat{margin-bottom:12px}
+  .post .body h1{font-family:Georgia,"Songti SC","Noto Serif SC",serif;font-size:46px;line-height:1.18;margin:0 0 18px;letter-spacing:-.02em}
+  .post .body .deck{font-size:17px;line-height:1.75;color:#3f3c36;margin:0 0 22px;max-width:760px}
+  .post .body .rule{border-top:1px solid var(--line);margin-bottom:20px}
+  .post .body p{font-family:Georgia,"Songti SC",serif;font-size:16px;line-height:1.95;margin:0 0 18px;color:#23211d;max-width:760px}
+  .post .body .drop::first-letter{font-size:58px;float:left;line-height:.9;padding-right:10px;font-weight:700;color:var(--accent)}
+  .post .body h2{font-size:13px;letter-spacing:.2em;margin:24px 0 12px;text-transform:uppercase;border-bottom:1px solid var(--soft);padding-bottom:8px;max-width:760px}
+  pre{background:#141310;color:#f0ece2;padding:18px 22px;font-family:"Cascadia Code",Consolas,monospace;font-size:12.5px;line-height:1.85;margin:0 0 18px;max-width:760px;overflow:hidden}
+  pre .c{color:#8d8778}
+  .badge{position:absolute;right:24px;bottom:12px;font-size:10px;letter-spacing:.2em;color:#b9b3a4;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<section class="frame">
+  <div class="shell">
+    <header>
+      <div class="topline">
+        <div class="mast">LELE<span>.</span></div>
+        <div class="meta"><b>个人博客 · 第 04 期</b>2026 年 11 月 · 上海</div>
+      </div>
+      <nav>
+        <div class="links"><a class="on" href="#">首页</a><a href="#">技术</a><a href="#">生活</a><a href="#">归档</a><a href="#">关于</a></div>
+        <div class="find">搜索文章　/　RSS　/　☾</div>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="lead">
+        <span class="cat">工程 · 深度</span>
+        <h1>用 Node.js 从零写一个<br>静态博客生成器</h1>
+        <p class="deck">不依赖任何框架，只用一个构建脚本，把 Markdown 变成完整的静态站点。记录我在取舍之间的思考。</p>
+        <div class="byline"><span>文 / Lele</span><span>2026.11.18</span><span>9 分钟阅读</span><span>1,842 字</span></div>
+        <div class="art">
+          <div class="sq"></div><div class="sq2"></div>
+          <div class="cap">BUILD · TEMPLATE · RENDER</div>
+        </div>
+      </div>
+      <aside>
+        <div class="head"><h3>最新</h3><span>按时间排序</span></div>
+        <div class="item"><div class="no">01</div><div><h4>我的 Windows 开发环境清单</h4><p>终端、编辑器与那些回不去的小工具</p><span class="tag">工具</span></div></div>
+        <div class="item"><div class="no">02</div><div><h4>为什么我还在坚持写博客</h4><p>算法推荐之外，一块属于自己的文字自留地</p><span class="tag">随笔</span></div></div>
+        <div class="item"><div class="no">03</div><div><h4>给静态站点加上全文搜索</h4><p>构建时生成索引，浏览器端模糊匹配</p><span class="tag">前端</span></div></div>
+        <div class="item"><div class="no">04</div><div><h4>周末骑行：城市边缘的 40 公里</h4><p>一次没有目的地的出发</p><span class="tag">生活</span></div></div>
+      </aside>
+    </div>
+
+    <div class="strip">
+      <div class="col"><h5>技术</h5><a href="#">理解 JavaScript 的事件循环<small>2026.10.02</small></a><a href="#">用 CSS 容器查询重构响应式<small>2026.09.21</small></a></div>
+      <div class="col"><h5>工具</h5><a href="#">我的终端配置与常用命令<small>2026.09.08</small></a><a href="#">静态站点部署的三条路径<small>2026.08.17</small></a></div>
+      <div class="col"><h5>生活</h5><a href="#">在雨天读完一本书<small>2026.08.30</small></a><a href="#">关于记录这件事<small>2026.07.14</small></a></div>
+    </div>
+    <div class="foot"><span>© 2026 LELE · 保留所有权利</span><span>RSS · GITHUB · EMAIL</span></div>
+  </div>
+  <div class="badge">方案 C · 杂志编辑</div>
+</section>
+
+<section class="frame">
+  <div class="shell">
+    <div class="art-head">
+      <div class="mast">LELE<span>.</span></div>
+      <div class="meta"><b>工程 · 深度</b>2026.11.18 / 09 MIN</div>
+    </div>
+    <div class="post">
+      <div class="side">
+        <b>作者</b>Lele<br><b>发布于</b>2026.11.18<br><b>标签</b>Node.js / 工程实践
+        <div class="share"><b>订阅</b>RSS Feed<br><b>联系</b>hello@lele.blog</div>
+      </div>
+      <div class="body">
+        <span class="cat">工程 · 深度</span>
+        <h1>用 Node.js 从零写一个静态博客生成器</h1>
+        <p class="deck">不依赖任何框架，只用一个构建脚本，把 Markdown 变成完整的静态站点。</p>
+        <div class="rule"></div>
+        <p class="drop">做这个博客之前，我试过几乎所有现成的方案：WordPress 太重，Hexo 的插件生态让人眼花，Next.js 对我这点内容来说又过于庞大。最后我决定，干脆自己写一个。</p>
+        <p>需求其实很小：读 Markdown、套模板、生成 HTML。真正的难点不在代码，而在于想清楚哪些东西该交给工具，哪些应该留给自己。</p>
+        <h2>01 / 先从目录结构开始</h2>
+        <p>一个够用的生成器，最终只留下三个目录：文章、模板和唯一的构建入口。</p>
+        <pre><span class="c">// scripts/build.js</span>
+const posts = await loadPosts('content')
+for (const post of posts) {
+  await render(post, 'templates/post.html')
+}</pre>
+        <h2>02 / 模板要足够笨</h2>
+        <p>模板只负责把数据填进占位符，不做任何逻辑判断。复杂的事情留给构建脚本，改版时才不至于牵一发动全身。</p>
+        <p class="quote" style="border-left:3px solid var(--accent);padding-left:16px;font-style:italic;color:#3f3c36">好的工具应该让你忘记它的存在，而不是让你一直围着它转。</p>
+        <h2>03 / 构建与部署</h2>
+        <p>生成结果只有纯静态文件，推送到 GitHub 仓库，由 Actions 自动发布到 Pages。没有服务器，没有数据库，也就没有需要维护的东西。</p>
+      </div>
+    </div>
+  </div>
+  <div class="badge">方案 C · 文章页</div>
+</section>
+
+</body>
+</html>

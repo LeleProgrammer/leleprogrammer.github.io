@@ -1,0 +1,44 @@
+{
+  "siteName": "LeleBlog",
+  "siteDescription": "",
+  "author": "Lele",
+  "email": "",
+  "github": "",
+  "siteUrl": "",
+  "basePath": "",
+  "language": "zh-CN",
+  "defaultTheme": "dark",
+  "startYear": 2025,
+  "postsPerPage": 8,
+  "footerNote": "",
+  "icp": "",
+  "backgroundImage": "/assets/images/bg.jpg",
+  "avatar": "/assets/images/avatar.jpg",
+  "backgroundBrightness": 0.7,
+  "profileButtons": [
+    {
+      "type": "github",
+      "label": "GitHub",
+      "url": "",
+      "visible": true
+    },
+    {
+      "type": "gamepad",
+      "label": "游戏站",
+      "url": "",
+      "visible": false
+    },
+    {
+      "type": "luogu",
+      "label": "洛谷",
+      "url": "",
+      "visible": true
+    },
+    {
+      "type": "rss",
+      "label": "RSS",
+      "url": "/rss.xml",
+      "visible": true
+    }
+  ]
+}
