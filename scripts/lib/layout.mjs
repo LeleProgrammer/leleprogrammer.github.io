@@ -143,6 +143,7 @@ export function layout(site, options = {}) {
   <link rel="alternate" type="application/rss+xml" title="${brand}" href="${asset(site, "/rss.xml")}">
   <link rel="stylesheet" href="${asset(site, "/assets/katex/katex.min.css")}">
   <link rel="stylesheet" href="${asset(site, "/assets/css/style.css")}">
+  <link rel="stylesheet" href="${asset(site, "/assets/css/highlight.css")}">
   <script>
     (function () {
       try {

@@ -1,5 +1,5 @@
 {
-  "siteName": "Lele",
+  "siteName": "LeleBlog",
   "siteDescription": "Lele 个人博客",
   "author": "Lele",
   "email": "",
@@ -10,7 +10,7 @@
   "defaultTheme": "dark",
   "startYear": 2025,
   "postsPerPage": 8,
-  "footerNote": "Made by Lele with ❤",
+  "footerNote": "",
   "icp": "",
   "backgroundImage": "/assets/images/bg.jpg",
   "avatar": "/assets/images/avatar.jpg",

@@ -4,6 +4,7 @@
 
 - 深色为主、可切换浅色主题
 - Markdown 写作，构建时渲染 KaTeX 数学公式（不需要外网 CDN）
+- 代码块语法高亮（highlight.js 构建时渲染）与一键复制
 - 文章分类、标签、归档、全文搜索、RSS、站点地图
 - 文章可选封面大图，文内图片与文章同目录
 - GitHub Actions 自动部署到 GitHub Pages
@@ -279,8 +280,20 @@ git push
 **部署后样式或链接错乱？**
 多半是 `siteUrl` 和实际地址不一致。项目仓库记得带上仓库名，例如 `/LeleBlog/`。
 
+**Actions 变绿了，但访问是 GitHub 的 “Site not found” 404？**
+先确认 **Settings → Pages → Build and deployment → Source** 真的是 **GitHub Actions**，而不是 **Deploy from a branch**。
+
+如果 Actions 列表里同时出现 `pages build and deployment`，并且步骤里有 **Build with Jekyll**，说明 Pages 还在按分支发布。新项目的根目录只有源码，没有 `index.html`（页面在 `dist/` 里，由 Actions 上传），Jekyll 发布出来就是空站，所以会 404。
+
+切到 **GitHub Actions** 后，再重新运行一次 **Deploy to GitHub Pages**（Re-run all jobs），或者 push 一次触发新构建；只改设置、不重新部署，线上可能仍停留在上一次的空发布。
+
 **想换强调色或字体？**
 颜色集中在 `assets/css/style.css` 顶部的 CSS 变量里（`--accent`、`--gradient` 等），字体在 `--font-sans`。
+
+**代码块怎么高亮？**
+在围栏代码块的语言位置写语言名，例如 `` ```cpp ``、`` ```python ``、`` ```js ``，构建时会用 highlight.js 生成高亮；不写语言名则按纯文本显示。
+
+语法配色在 `assets/css/highlight.css`，代码块背景、字号和复制按钮在 `assets/css/style.css` 的 `.prose pre` 一节。
 
 **评论系统？**
 当前没有接入。纯静态站可以后续接 Giscus（GitHub Discussions）或 Waline，需要时再加。

@@ -1,0 +1,97 @@
+/* ==========================================================================
+   highlight.js token colors
+   Code blocks keep a dark surface in both themes, so these colors are fixed.
+   ========================================================================== */
+
+.prose pre code.hljs {
+  color: #c8d3f5;
+  background: transparent;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #7c86b8;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-doctag,
+.hljs-name,
+.hljs-meta,
+.hljs-meta-keyword {
+  color: #c099ff;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #c3e88d;
+}
+
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #ff966c;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-title.class_,
+.hljs-title.function_ {
+  color: #82aaff;
+}
+
+.hljs-type,
+.hljs-class .hljs-title,
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #ffc777;
+}
+
+.hljs-attr,
+.hljs-property,
+.hljs-params,
+.hljs-subst {
+  color: #c8d3f5;
+}
+
+.hljs-operator,
+.hljs-punctuation {
+  color: #a9b8e8;
+}
+
+.hljs-tag,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #ff757f;
+}
+
+.hljs-deletion {
+  color: #ff757f;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: 700;
+}
+
+.hljs-link {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose pre code {
+  tab-size: 4;
+}

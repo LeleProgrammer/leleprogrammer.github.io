@@ -1181,8 +1181,8 @@ body.has-site-bg .site-footer {
   background: #0b0d14;
   color: #d7dbea;
   overflow-x: auto;
-  font-size: 13.5px;
-  line-height: 1.8;
+  font-size: 14.5px;
+  line-height: 1.78;
 }
 
 [data-theme="light"] .prose pre {
@@ -2274,7 +2274,7 @@ body.has-site-bg .site-footer {
 
   .prose pre {
     padding: 38px 16px 16px;
-    font-size: 13px;
+    font-size: 13.5px;
   }
 
   .post-nav {
