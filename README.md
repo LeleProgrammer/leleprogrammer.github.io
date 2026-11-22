@@ -268,52 +268,6 @@ git push
 
 推送后 Actions 会自动重新构建，一两分钟后线上更新。也可以在 Actions 页面点 **Run workflow** 手动触发。
 
-## 仓库里已经有旧博客，怎么办？
-
-GitHub Pages 的一个仓库只能有一个发布源，旧博客和新博客不能同时占用同一个根路径。按你的情况（旧博客发布在 `leleprogrammer.github.io`），有两种做法。
-
-### 方案 A：新博客先放独立仓库（推荐，最安全）
-
-旧博客继续在线，新博客先发布到 `https://leleprogrammer.github.io/LeleBlog/`，确认没问题后再决定要不要替换根路径。
-
-1. 把 `site.config.json` 的 `siteUrl` 设为 `https://leleprogrammer.github.io/LeleBlog/`，`basePath` 留空（会自动得到 `/LeleBlog`）。
-2. 新建 public 仓库 `LeleBlog`。
-3. 在 `blog-workspace` 里初始化并推送（如果还没有 `.git`）：
-
-```bash
-git init
-git add .
-git commit -m "new static blog"
-git branch -M main
-git remote add origin https://github.com/LeleProgrammer/LeleBlog.git
-git push -u origin main
-```
-
-4. 新仓库 **Settings → Pages → Build and deployment → Source** 选 **GitHub Actions**。
-5. Actions 变绿后访问 `https://leleprogrammer.github.io/LeleBlog/`。旧站 `https://leleprogrammer.github.io/` 不受影响。
-
-### 方案 B：直接替换旧博客仓库
-
-旧仓库是 `LeleProgrammer/leleprogrammer.github.io`，当前从 `main` 分支发布。替换前先留一个可回滚的分支：
-
-```bash
-git clone git@github.com:LeleProgrammer/leleprogrammer.github.io.git
-cd leleprogrammer.github.io
-git branch legacy-hexo-2026
-git push origin legacy-hexo-2026
-git rm -rf .
-# 把 blog-workspace 里的新项目文件复制进来（不要 node_modules / dist）
-git add .
-git commit -m "replace Hexo blog with new static site"
-git push origin main
-```
-
-然后把 `site.config.json` 的 `siteUrl` 改成 `https://leleprogrammer.github.io/`，重新构建；仓库 **Settings → Pages** 的 Source 选 **GitHub Actions**。
-
-- 替换后不要再运行旧 Hexo 的 `hexo deploy`，否则会把 `main` 覆盖回旧站。
-- 出问题可以切回备份分支：`git checkout legacy-hexo-2026` 后把 Pages 发布源临时切回该分支，或强制恢复 `main`。
-- 旧博客源码仍在 `LeleBlog-Source` 仓库，文章和资源已经迁移到新项目，不会丢。
-
 ## 常见问题
 
 **公式没有渲染，还是美元符号？**
