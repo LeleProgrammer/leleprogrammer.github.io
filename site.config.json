@@ -26,7 +26,7 @@
       "type": "gamepad",
       "label": "游戏站",
       "url": "https://gamehub.leleprogrammer.chatgpt.site",
-      "visible": false
+      "visible": true
     },
     {
       "type": "luogu",
