@@ -51,8 +51,8 @@ $$
 
 | 要数的方案 | 公式 | 从哪一项开始 |
 |---|---|---|
-| 一条条件也没发生 | $\displaystyle\sum_{S\subseteq[m]}(-1)^{|S|}F(S)$ | 空集项是总方案数，之后减单个、加两两 |
-| 至少发生一条条件 | $\displaystyle\sum_{\varnothing\ne S\subseteq[m]}(-1)^{|S|+1}F(S)$ | 加单个、减两两、加三条 |
+| 一条条件也没发生 | $\displaystyle\sum_{S\subseteq[m]}(-1)^{\lvert S \rvert}F(S)$ | 空集项是总方案数，之后减单个、加两两 |
+| 至少发生一条条件 | $\displaystyle\sum_{\varnothing\ne S\subseteq[m]}(-1)^{\lvert S \rvert +1}F(S)$ | 加单个、减两两、加三条 |
 
 **整篇最值得掌握的是这个证明。** 写出一个新式子后，拿一份实际触发 $t$ 条条件的方案代进去，看它最后贡献几次。后面的「恰好 $k$ 个」、平方自由因子和期望容斥都可以这样理解。
 
