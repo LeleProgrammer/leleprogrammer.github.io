@@ -304,3 +304,9 @@ git push
 - markdown-it + markdown-it-multimd-table + markdown-it-strikethrough-alt
 - KaTeX（构建时渲染）、highlight.js、gray-matter
 - 原生 CSS 变量与少量原生 JavaScript（主题、搜索、目录、代码复制）
+
+## 许可证与文章版权
+
+LeleBlog 的项目代码采用 GNU Affero General Public License v3.0（仅限第 3 版，`AGPL-3.0-only`）。完整条款见 [LICENSE](LICENSE)。
+
+本站原创文章 © Lele，保留所有权利。第三方内容及素材的权利归各自权利人所有。
