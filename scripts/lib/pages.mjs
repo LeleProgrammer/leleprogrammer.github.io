@@ -140,12 +140,12 @@ export function renderHome(site, posts, tags, categories) {
   });
 }
 
-export function renderPostsIndex(site, posts, page, totalPages) {
+export function renderPostsIndex(site, posts, { page, totalPages, totalPosts }) {
   const body = `<div class="container">
     ${pageHead({
       eyebrow: "ARCHIVE OF WRITING",
       title: page > 1 ? "全部文章 · 第 " + page + " 页" : "全部文章",
-      description: "共 " + posts.length + " 篇文章，按发布时间从新到旧排列。"
+      description: "共 " + totalPosts + " 篇文章，按发布时间从新到旧排列。"
     })}
     <div class="post-grid">
       ${posts.map((post) => postCard(site, post)).join("")}

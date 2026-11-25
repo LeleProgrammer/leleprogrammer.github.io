@@ -204,7 +204,7 @@ export async function build(options = {}) {
   const totalPages = Math.max(1, Math.ceil(posts.length / pageSize));
   for (let page = 1; page <= totalPages; page += 1) {
     const slice = posts.slice((page - 1) * pageSize, page * pageSize);
-    const html = renderPostsIndex(site, slice, page, totalPages);
+    const html = renderPostsIndex(site, slice, { page, totalPages, totalPosts: posts.length });
     writeFile(page === 1 ? path.join("posts", "index.html") : path.join("posts", "page", String(page), "index.html"), html);
   }
 
