@@ -919,7 +919,7 @@ button {
 
 body.has-site-bg .article .container,
 body.page-about.has-site-bg .container--narrow,
-body.page-archive.has-site-bg .container {
+body.page-archive.has-site-bg .site-main > .container {
   margin-top: 32px;
   padding: 4px 28px 12px;
   border-radius: 28px;
@@ -2069,7 +2069,7 @@ body.has-site-bg .site-footer {
 
   body.has-site-bg .article .container,
   body.page-about.has-site-bg .container--narrow,
-  body.page-archive.has-site-bg .container {
+  body.page-archive.has-site-bg .site-main > .container {
     padding: 2px 20px 10px;
     border-radius: 22px;
   }
@@ -2245,7 +2245,7 @@ body.has-site-bg .site-footer {
 
   body.has-site-bg .article .container,
   body.page-about.has-site-bg .container--narrow,
-  body.page-archive.has-site-bg .container {
+  body.page-archive.has-site-bg .site-main > .container {
     padding: 2px 14px 8px;
     border-radius: 18px;
   }
