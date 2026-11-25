@@ -296,7 +296,9 @@ git push
 语法配色在 `assets/css/highlight.css`，代码块背景、字号和复制按钮在 `assets/css/style.css` 的 `.prose pre` 一节。
 
 **评论系统？**
-当前没有接入。纯静态站可以后续接 Giscus（GitHub Discussions）或 Waline，需要时再加。
+文章页支持 [Giscus](https://giscus.app/zh-CN)。先在公开仓库开启 Discussions 并安装 Giscus App，再将配置页生成的 `data-repo`、`data-repo-id`、`data-category` 和 `data-category-id` 分别填入 `site.config.json` 中的 `giscus.repo`、`repoId`、`category` 和 `categoryId`。留空任一字段可关闭评论。
+
+评论按文章路径关联讨论串，随站点切换深浅色主题。启用时，文章页会从 `giscus.app` 加载评论组件，读者可使用 GitHub 账号留言。
 
 ## 技术栈
 

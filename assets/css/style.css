@@ -1428,6 +1428,15 @@ body.has-site-bg .site-footer {
 
 /* ---------- post nav ---------- */
 
+.article-comments {
+  max-width: 780px;
+  margin: 48px auto 24px;
+}
+
+.article-comments h2 {
+  margin-bottom: 16px;
+}
+
 .post-nav {
   display: grid;
   grid-template-columns: 1fr 1fr;

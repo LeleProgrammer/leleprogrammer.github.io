@@ -8,6 +8,12 @@
   "basePath": "",
   "language": "zh-CN",
   "defaultTheme": "dark",
+  "giscus": {
+    "repo": "leleprogrammer/leleprogrammer.github.io",
+    "repoId": "R_kgDOPezMjw",
+    "category": "Announcements",
+    "categoryId": "DIC_kwDOPezMj84DL64j"
+  },
   "startYear": 2025,
   "postsPerPage": 8,
   "footerNote": "",

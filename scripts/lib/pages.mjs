@@ -188,6 +188,14 @@ export function renderPost(site, post, previous, next) {
         <img src="${cover}" alt="${escapeHtml(post.coverAlt)}" loading="eager" decoding="async">
       </figure>`
     : "";
+  const giscus = site.giscus;
+  const comments = giscus?.repo && giscus.repoId && giscus.category && /^DIC_[\w-]+$/.test(giscus.categoryId)
+    ? `<section class="article-comments" aria-labelledby="article-comments-title">
+        <h2 id="article-comments-title">评论</h2>
+        <div class="giscus" data-repo="${escapeHtml(giscus.repo)}" data-repo-id="${escapeHtml(giscus.repoId)}"
+          data-category="${escapeHtml(giscus.category)}" data-category-id="${escapeHtml(giscus.categoryId)}"></div>
+      </section>`
+    : "";
 
   const body = `<article class="article">
     <div class="container">
@@ -214,6 +222,7 @@ export function renderPost(site, post, previous, next) {
       </div>
 
       ${postNav(site, previous, next)}
+      ${comments}
     </div>
   </article>`;
 
