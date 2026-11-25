@@ -7,16 +7,44 @@
   /* ---------------- theme ---------------- */
 
   var themeButton = document.querySelector("[data-theme-toggle]");
+  var comments = document.querySelector(".article-comments .giscus");
+  function syncCommentTheme() {
+    var frame = comments && comments.querySelector("iframe.giscus-frame");
+    if (frame && frame.contentWindow) {
+      frame.contentWindow.postMessage({ giscus: { setConfig: { theme: root.dataset.theme } } }, "https://giscus.app");
+    }
+  }
+
   if (themeButton) {
     themeButton.addEventListener("click", function () {
       var next = root.dataset.theme === "dark" ? "light" : "dark";
       root.dataset.theme = next;
+      syncCommentTheme();
       try {
         localStorage.setItem(THEME_KEY, next);
       } catch (error) {
         /* ignore */
       }
     });
+  }
+
+  if (comments) {
+    comments.addEventListener("load", syncCommentTheme, true);
+    var commentScript = document.createElement("script");
+    commentScript.src = "https://giscus.app/client.js";
+    commentScript.async = true;
+    commentScript.crossOrigin = "anonymous";
+    Object.assign(commentScript.dataset, comments.dataset, {
+      mapping: "pathname",
+      strict: "0",
+      reactionsEnabled: "1",
+      emitMetadata: "0",
+      inputPosition: "bottom",
+      theme: root.dataset.theme,
+      lang: "zh-CN",
+      loading: "lazy"
+    });
+    comments.after(commentScript);
   }
 
   /* ---------------- mobile nav ---------------- */
