@@ -1,7 +1,7 @@
 ---
 title: NOIP 字符串专题训练
-date: 2026-11-25
-updated: 2026-11-25
+date: 2026-11-25 00:00:00
+updated: 2026-11-25 00:00:00
 tags: [OI, 字符串, AI 好文推荐]
 categories: [AI 好文推荐]
 summary: ChatGPT 推荐的 NOIP 字符串专题复习训练

@@ -1,7 +1,7 @@
 ---
 title: 容斥原理基础
-date: 2026-11-24
-updated: 2026-11-24
+date: 2026-11-24 00:00:00
+updated: 2026-11-24 00:00:00
 tags: [OI, 容斥原理, AI 好文推荐]
 categories: [AI 好文推荐]
 summary: ChatGPT 总结的容斥原理基础

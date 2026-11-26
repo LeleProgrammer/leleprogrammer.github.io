@@ -1,6 +1,6 @@
 ---
 title: "题解：P16480 [GKS 2014 #A] Cut Tiles"
-date: 2026-08-09
+date: 2026-08-09 23:17:38
 tags: ["OI","数学","Google Kick Start"]
 categories: ["OI","题解","洛谷"]
 ---

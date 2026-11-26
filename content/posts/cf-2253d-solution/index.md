@@ -1,6 +1,6 @@
 ---
 title: "题解：CF2253D Hypercarp and Interdimensional Jumps"
-date: 2026-08-10
+date: 2026-08-10 15:18:46
 tags: ["OI"]
 categories: ["OI","题解","Codeforces"]
 ---

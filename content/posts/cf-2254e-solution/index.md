@@ -1,6 +1,6 @@
 ---
 title: "题解：CF2254E Chronostasis"
-date: 2026-08-08
+date: 2026-08-08 13:23:35
 tags: ["OI"]
 categories: ["OI","题解","Codeforces"]
 ---

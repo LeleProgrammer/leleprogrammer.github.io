@@ -1,7 +1,7 @@
 ---
 title: 容斥原理进阶
-date: 2026-11-25
-updated: 2026-11-25
+date: 2026-11-25 00:00:00
+updated: 2026-11-25 00:00:00
 tags: [OI, 容斥原理, AI 好文推荐]
 categories: [AI 好文推荐]
 summary: ChatGPT 推荐的容斥原理进阶文章

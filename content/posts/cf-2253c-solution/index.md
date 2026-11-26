@@ -1,6 +1,6 @@
 ---
 title: "题解：CF2253C Sum of Distinct Values in a Matrix"
-date: 2026-08-10
+date: 2026-08-10 17:14:53
 tags: ["OI"]
 categories: ["OI","题解","Codeforces"]
 ---

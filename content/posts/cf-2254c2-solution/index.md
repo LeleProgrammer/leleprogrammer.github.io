@@ -1,6 +1,6 @@
 ---
 title: "题解：CF2254C2 Marenol (hard version)"
-date: 2026-08-08
+date: 2026-08-08 13:04:58
 tags: ["OI"]
 categories: ["OI","题解","Codeforces"]
 ---

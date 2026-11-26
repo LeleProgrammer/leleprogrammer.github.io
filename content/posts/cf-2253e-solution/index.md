@@ -1,6 +1,6 @@
 ---
 title: "题解：CF2253E Diameter Intersections"
-date: 2026-08-10
+date: 2026-08-10 15:28:26
 tags: ["OI"]
 categories: ["OI","题解","Codeforces"]
 ---

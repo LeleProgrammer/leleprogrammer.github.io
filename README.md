@@ -138,8 +138,8 @@ npm run clean     # 删除 dist/
 ```markdown
 ---
 title: 文章标题
-date: 2026-11-22
-updated: 2026-11-23
+date: 2026-11-22 14:30:00
+updated: 2026-11-23 09:15:00
 tags: [Markdown, 教程]
 categories: [OI, 题解]
 summary: 一句话摘要，会显示在列表卡片和搜索结果里。
@@ -151,13 +151,15 @@ draft: false
 正文从这里开始。
 ```
 
+时间会保留到秒（用于 RSS、结构化数据和排序），页面展示到分钟，例如 `2026年11月22日 14:30`。
+
 frontmatter 字段说明：
 
 | 字段 | 必填 | 说明 |
 | --- | --- | --- |
 | title | 是 | 文章标题 |
-| date | 建议 | 发布日期，格式 YYYY-MM-DD；不写时使用文件修改时间 |
-| updated | 否 | 更新日期 |
+| date | 建议 | 发布日期，格式 `YYYY-MM-DD HH:mm:ss`；只写日期时时间按 00:00:00 处理，不写时使用文件修改时间 |
+| updated | 否 | 更新日期，格式同 date |
 | tags | 否 | 标签数组，支持中文 |
 | categories | 否 | 分类路径数组，例如 ["OI", "题解", "洛谷"] |
 | summary | 否 | 摘要，留空时自动截取正文 |

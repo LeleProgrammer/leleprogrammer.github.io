@@ -17,7 +17,7 @@ import {
   render404
 } from "./lib/pages.mjs";
 import { absoluteUrl } from "./lib/html.mjs";
-import { escapeXml, isoDate, withBase } from "./lib/utils.mjs";
+import { escapeXml, formatCardDate, isoDate, withBase } from "./lib/utils.mjs";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const distRoot = path.join(projectRoot, "dist");
@@ -59,7 +59,7 @@ function buildSearchIndex(site, posts) {
   const entries = posts.map((post) => ({
     title: post.title,
     url: withBase(site.basePath, post.url),
-    date: isoDate(post.date),
+    date: formatCardDate(post.date),
     tags: post.tags,
     categories: post.categories,
     summary: post.summary,

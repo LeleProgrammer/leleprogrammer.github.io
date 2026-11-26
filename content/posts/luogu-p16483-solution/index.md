@@ -1,6 +1,6 @@
 ---
 title: "题解：P16483 [GKS 2014 #B] New Years Eve"
-date: 2026-08-11
+date: 2026-08-11 16:03:56
 tags: ["OI","Google Kick Start"]
 categories: ["OI","题解","洛谷"]
 ---
