@@ -1,6 +1,6 @@
 ---
 title: "2025 JZ Summer Camp"
-date: 2025-08-18
+date: 2025-08-18 23:28:00
 tags: ["OI","JZ"]
 categories: ["游记"]
 ---

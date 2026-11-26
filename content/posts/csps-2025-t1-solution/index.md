@@ -1,6 +1,6 @@
 ---
 title: "CSP-S 2025 T1 题解"
-date: 2025-11-02
+date: 2025-11-02 09:54:56
 tags: ["OI","CSP"]
 categories: ["OI","题解"]
 ---

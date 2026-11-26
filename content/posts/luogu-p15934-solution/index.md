@@ -1,6 +1,6 @@
 ---
 title: "题解：洛谷 P15934 [TOPC 2021] Flip"
-date: 2026-04-03
+date: 2026-04-03 13:48:11
 tags: ["OI","TOPC","线段树"]
 categories: ["OI","题解","洛谷"]
 ---

@@ -1,6 +1,6 @@
 ---
 title: "题解：P16481 [GKS 2014 #A] Addition"
-date: 2026-08-10
+date: 2026-08-10 22:45:14
 tags: ["OI","Google Kick Start","图论","图论建模"]
 categories: ["OI","题解","洛谷"]
 ---

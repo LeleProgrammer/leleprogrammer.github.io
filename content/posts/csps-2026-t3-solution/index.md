@@ -1,6 +1,6 @@
 ---
 title: "CSP-S 2026 T3 题解"
-date: 2026-10-31
+date: 2026-10-31 22:29:26
 tags: ["OI","CSP"]
 categories: ["OI","题解"]
 ---

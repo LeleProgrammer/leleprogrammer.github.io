@@ -1,6 +1,6 @@
 ---
 title: "题解：CF2254F Whiplash"
-date: 2026-08-08
+date: 2026-08-08 13:11:51
 tags: ["OI"]
 categories: ["OI","题解","Codeforces"]
 ---

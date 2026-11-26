@@ -13,7 +13,7 @@ import {
   toc
 } from "./components.mjs";
 import { ICONS, absoluteUrl, asset, avatarUrl, categoryHref, coverUrl, initialOf, postHref, tagHref } from "./html.mjs";
-import { escapeHtml, formatDate, isoDate, slugify } from "./utils.mjs";
+import { escapeHtml, formatArchiveDate, formatDate, isoDateTime, slugify } from "./utils.mjs";
 
 function countCategoryNodes(nodes) {
   return nodes.reduce((sum, node) => sum + 1 + countCategoryNodes(node.children), 0);
@@ -206,7 +206,7 @@ export function renderPost(site, post, previous, next) {
         <h1 class="article-title">${escapeHtml(post.title)}</h1>
         <div class="article-meta">
           <span class="article-meta-item article-author"><span class="avatar avatar--tiny" aria-hidden="true">${avatarHtml}</span>${escapeHtml(site.authorName)}</span>
-          <time class="article-meta-item" datetime="${isoDate(post.date)}">${formatDate(post.date)}</time>
+          <time class="article-meta-item" datetime="${isoDateTime(post.date)}">${formatDate(post.date)}</time>
           <span class="article-meta-item">${post.readingMinutes} 分钟阅读</span>
           ${updated}
         </div>
@@ -344,7 +344,7 @@ export function renderArchive(site, posts) {
     <h2 class="archive-year">${year}<span>${items.length} 篇</span></h2>
     <ul class="archive-list">
       ${items.map((post) => `<li class="archive-item">
-        <time datetime="${isoDate(post.date)}">${isoDate(post.date).slice(5).replace("-", ".")}</time>
+        <time datetime="${isoDateTime(post.date)}">${formatArchiveDate(post.date)}</time>
         <a class="archive-link" href="${postHref(site, post)}">${escapeHtml(post.title)}</a>
         <span class="archive-tag">${post.categories.length ? escapeHtml(post.categories[post.categories.length - 1]) : post.tags.length ? "#" + escapeHtml(post.tags[0]) : ""}</span>
       </li>`).join("")}

@@ -1,6 +1,6 @@
 ---
 title: "题解：洛谷 P8188 [USACO22FEB] Email Filing S"
-date: 2026-03-11
+date: 2026-03-11 18:04:28
 tags: ["OI","USACO","模拟"]
 categories: ["OI","题解","洛谷"]
 ---

@@ -1,6 +1,6 @@
 ---
 title: "洛谷 P14254 分割（divide） 题解"
-date: 2025-11-02
+date: 2025-11-02 09:54:38
 tags: ["OI"]
 categories: ["OI","题解","洛谷"]
 ---

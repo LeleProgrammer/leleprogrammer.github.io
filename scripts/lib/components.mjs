@@ -1,5 +1,5 @@
 import { ICONS, asset, categoryHref, coverUrl, pageHref, postHref, tagHref } from "./html.mjs";
-import { escapeHtml, isoDate, slugify } from "./utils.mjs";
+import { escapeHtml, formatCardDate, isoDateTime, slugify } from "./utils.mjs";
 
 export function tagChip(site, name, count = null, className = "") {
   const slug = slugify(name, "tag");
@@ -24,7 +24,7 @@ function cardMeta(site, post) {
   } else {
     category = `<span class="post-card-cat">文章</span>`;
   }
-  return `<div class="post-card-meta">${category}<time datetime="${isoDate(post.date)}">${isoDate(post.date).replaceAll("-", ".")}</time></div>`;
+  return `<div class="post-card-meta">${category}<time datetime="${isoDateTime(post.date)}">${formatCardDate(post.date)}</time></div>`;
 }
 
 export function postCard(site, post, variant = "default") {

@@ -1,6 +1,6 @@
 ---
 title: "题解：P16508 [GKS 2015 #B] gNumbers"
-date: 2026-08-11
+date: 2026-08-11 23:25:18
 tags: ["OI","Google Kick Start","状态压缩","DP"]
 categories: ["OI","题解","洛谷"]
 ---

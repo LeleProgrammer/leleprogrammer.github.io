@@ -24,12 +24,26 @@ export function slugify(input, fallback = "section") {
 
 export function parseDate(value) {
   if (value instanceof Date && !Number.isNaN(value.getTime())) {
-    return new Date(Date.UTC(value.getUTCFullYear(), value.getUTCMonth(), value.getUTCDate()));
+    return new Date(Date.UTC(
+      value.getUTCFullYear(),
+      value.getUTCMonth(),
+      value.getUTCDate(),
+      value.getUTCHours(),
+      value.getUTCMinutes(),
+      value.getUTCSeconds()
+    ));
   }
   const text = String(value || "").trim();
-  const match = text.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  const match = text.match(/^(\d{4})-(\d{2})-(\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2}))?)?/);
   if (match) {
-    return new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3])));
+    return new Date(Date.UTC(
+      Number(match[1]),
+      Number(match[2]) - 1,
+      Number(match[3]),
+      Number(match[4] || 0),
+      Number(match[5] || 0),
+      Number(match[6] || 0)
+    ));
   }
   const parsed = new Date(text);
   return Number.isNaN(parsed.getTime()) ? new Date() : parsed;
@@ -39,15 +53,38 @@ const dateFormatter = new Intl.DateTimeFormat("zh-CN", {
   year: "numeric",
   month: "long",
   day: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: false,
   timeZone: "UTC"
 });
+
+function pad2(value) {
+  return String(value).padStart(2, "0");
+}
 
 export function formatDate(date) {
   return dateFormatter.format(date);
 }
 
+export function formatCardDate(date) {
+  return [
+    date.getUTCFullYear() + "." + pad2(date.getUTCMonth() + 1) + "." + pad2(date.getUTCDate()),
+    pad2(date.getUTCHours()) + ":" + pad2(date.getUTCMinutes())
+  ].join(" ");
+}
+
+export function formatArchiveDate(date) {
+  return pad2(date.getUTCMonth() + 1) + "." + pad2(date.getUTCDate()) + " " +
+    pad2(date.getUTCHours()) + ":" + pad2(date.getUTCMinutes());
+}
+
 export function isoDate(date) {
   return date.toISOString().slice(0, 10);
+}
+
+export function isoDateTime(date) {
+  return date.toISOString();
 }
 
 export function readingTime(text = "") {

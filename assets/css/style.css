@@ -735,11 +735,21 @@ button {
   font-size: 13.5px;
 }
 
+.post-card-meta time {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
 .post-card-cat {
+  min-width: 0;
+  overflow: hidden;
   color: var(--accent);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.06em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .post-card-cat:hover {
@@ -1675,7 +1685,7 @@ body.has-site-bg .site-footer {
 
 .archive-item {
   display: grid;
-  grid-template-columns: 70px minmax(0, 1fr) auto;
+  grid-template-columns: 104px minmax(0, 1fr) auto;
   align-items: baseline;
   gap: 14px;
   padding: 11px 0;
@@ -1689,6 +1699,7 @@ body.has-site-bg .site-footer {
   color: var(--muted-2);
   font-size: 13px;
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .archive-link {
@@ -2321,7 +2332,7 @@ body.has-site-bg .site-footer {
   }
 
   .archive-item {
-    grid-template-columns: 58px minmax(0, 1fr);
+    grid-template-columns: 92px minmax(0, 1fr);
   }
 
   .archive-tag {

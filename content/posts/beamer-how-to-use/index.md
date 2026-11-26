@@ -1,6 +1,6 @@
 ---
 title: "Beamer 使用指南"
-date: 2025-08-17
+date: 2025-08-17 22:28:03
 tags: ["Latex","Beamer"]
 categories: ["教程"]
 ---
